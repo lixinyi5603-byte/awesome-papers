@@ -22,51 +22,61 @@ Multimodal Large Language Models · Visual Perception · CLIP
 
 **🔖 TAGS**:
 `compression` `quantization` `token-pruning` `efficient-inference`
-`MLLM` `CLIP`
+`MLLM`
 
 ---
 """
 
-
 SYSTEM_PROMPT = """
-You are an expert in model compression, multimodal large language models,
-vision-language models, and CLIP-like models.
+You are an expert in model compression and efficient deep learning.
 
-Given a paper title and abstract, determine whether it is relevant to the
-following research scope.
+Given a paper title and abstract, determine whether it is relevant to model
+lightweighting and efficient inference.
 
-Relevant topics:
-- model compression, pruning, sparsification, low-rank compression
+Relevant topics include:
+- model compression
+- structured or unstructured pruning
+- sparsification
+- low-rank compression
+- parameter reduction
 - quantization: PTQ, QAT, low-bit and mixed-precision inference
-- token pruning, token merging, token compression, token selection
-- efficient inference: reducing FLOPs, latency, memory, or computation
-- MLLMs / LVLMs / VLMs
-- CLIP and contrastive vision-language models
-- multimodal representation, alignment, fusion, and visual token processing
-- fine-grained, region-level, or high-resolution visual understanding
+- weight and activation quantization
+- token pruning, token merging, token selection, and token compression
+- efficient attention
+- efficient inference
+- reducing FLOPs, latency, memory, bandwidth, or computational cost
+- lightweight model architecture
+- compression or acceleration of vision, multimodal, or language models
 
-Give higher priority to papers combining model efficiency with multimodal or
-vision-language models, such as MLLM quantization, visual token pruning,
-multimodal model compression, and efficient VLM/MLLM inference.
+Give higher priority to papers about:
+- quantization
+- model pruning
+- token pruning / token compression
+- joint compression methods
+- efficient inference
+- lightweight deployment
+
+A paper about MLLMs, VLMs, CLIP, ViTs, or LLMs is relevant only if its main
+contribution is directly related to model compression, pruning, quantization,
+token reduction, or inference efficiency.
 
 Mark a paper irrelevant if it mainly focuses on:
-- text-only LLMs or pure NLP
-- general LLM serving, scheduling, networking, or distributed systems unrelated
-  to multimodal models or compression
-- benchmark-only, dataset-only, survey, or application-only work
-- traditional detection, segmentation, tracking, medical imaging, autonomous
-  driving, or remote sensing without broadly useful compression or multimodal methods
-- image-text retrieval or zero-shot recognition
-- pure diffusion generation
+- model capability improvement without efficiency or compression
+- multimodal reasoning or visual perception without lightweighting
+- benchmarks, datasets, surveys, or application-only work
+- general distributed systems, scheduling, networking, or serving without
+  direct model compression or inference-efficiency contributions
+- traditional vision or NLP tasks without reusable lightweighting methods
+- pure diffusion generation without compression or acceleration
 
-Judge the paper by its actual contribution, not by keyword matching alone.
+Judge the actual contribution rather than keywords.
 When uncertain, prefer precision over recall.
 
 If relevant, assign at most 3 strongly related tags from:
 {tag_descriptions}
 
 Generate a TLDR of no more than 50 words containing:
-1. the main problem,
+1. the main compression or efficiency problem,
 2. the key method,
 3. one quantitative result if explicitly stated in the abstract.
 
@@ -78,7 +88,6 @@ Relevant:
 Irrelevant:
 {"relevant": false}
 """
-
 
 USER_PROMPT = """
 Title: {title}
@@ -103,9 +112,6 @@ TAGS = {
 
     "MLLM":
         "multimodal large language models, LVLMs or vision-language models",
-
-    "CLIP":
-        "CLIP, SigLIP or contrastive vision-language representation learning",
 }
 
 

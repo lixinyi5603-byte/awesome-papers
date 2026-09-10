@@ -10,12 +10,13 @@ from dotenv import load_dotenv
 load_dotenv()  # Load .env for local runs (no-op in CI when env vars already exist)
 
 # --- Basic Setup --------------------------------------------------------------
-README_FILE = Path("daily-arxiv-llm.md")
+README_FILE = Path("daily-arxiv-vlm.md")
 
-# FIXME: Adding cs.LG/cs.AI can bring in many irrelevant papers (need stronger LLM filtering)
-ARXIV_CATEGORIES: List[str] = ["cs.DC", "cs.OS"]
+# Vision-language-model papers are primarily submitted to these categories.  The
+# Relevance filter further narrows the broad cs.AI/cs.LG feeds to the target topics.
+ARXIV_CATEGORIES: List[str] = ["cs.CV", "cs.AI", "cs.LG"]
 
-DEFAULT_START_DATE = "20250101"  # YYYYMMDD
+DEFAULT_START_DATE = "20260909"  # YYYYMMDD
 
 # Use SiliconFlow by default; keep names consistent with original script
 API_KEY = os.environ["API_KEY"]  # required

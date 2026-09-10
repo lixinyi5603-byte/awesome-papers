@@ -24,9 +24,9 @@
 </details>
 
 ---
-## [🔥Daily Arxiv Papers on LMSys🔥](daily-arxiv-llm.md)
+## [🔥Daily Arxiv Papers on VLM Efficiency & Perception🔥](daily-arxiv-vlm.md)
 
-[https://github.com/TJU-NSL/awesome-papers/daily-arxiv-llm.md](daily-arxiv-llm.md)
+[https://github.com/TJU-NSL/awesome-papers/daily-arxiv-vlm.md](daily-arxiv-vlm.md)
 
 
 <!-- -------------------------------------------------------------------------- Template (DE NOT DELETE) -----------------------------------------------------------------------------

@@ -18,7 +18,7 @@ def fetch_arxiv_papers(
     """Fetch papers from arXiv within a date window (inclusive of start day).
 
     Args:
-        categories: e.g. ["cs.DC", "cs.OS"] or "cs.DC".
+        categories: e.g. ["cs.CV", "cs.AI", "cs.LG"] or "cs.CV".
         start_date: YYYYMMDD.
         end_date: YYYYMMDD. If None, equals start_date.
 

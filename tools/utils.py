@@ -22,74 +22,55 @@ Multimodal Large Language Models · Visual Perception · CLIP
 
 **🔖 TAGS**:
 `compression` `quantization` `token-pruning` `efficient-inference`
-`vision-encoder` `visual-perception` `MLLM` `CLIP` `zero-shot` `retrieval`
+`MLLM` `CLIP`
 
 ---
 """
 
 
 SYSTEM_PROMPT = """
-You are an expert in efficient vision models and multimodal learning.
+You are an expert in model compression, multimodal large language models,
+vision-language models, and CLIP-like models.
 
-Given the title and abstract of a paper, determine whether it is relevant to
-the following research interests.
+Given a paper title and abstract, determine whether it is relevant to the
+following research scope.
 
-### Direction 1: Model Efficiency
-Focus on methods for making vision or multimodal models smaller or faster:
+Relevant topics:
+- model compression, pruning, sparsification, low-rank compression
+- quantization: PTQ, QAT, low-bit and mixed-precision inference
+- token pruning, token merging, token compression, token selection
+- efficient inference: reducing FLOPs, latency, memory, or computation
+- MLLMs / LVLMs / VLMs
+- CLIP and contrastive vision-language models
+- multimodal representation, alignment, fusion, and visual token processing
+- fine-grained, region-level, or high-resolution visual understanding
 
-- model compression
-- quantization, including PTQ, QAT, low-bit and mixed-precision inference
-- weight/model pruning and sparsification
-- visual token pruning, token merging, token compression or token selection
-- efficient inference, reducing FLOPs, latency, memory or computation
-- compression or acceleration of vision encoders, ViTs, VLMs or MLLMs
-
-### Direction 2: Vision and Multimodal Models
-Focus on:
-
-- vision encoders and Vision Transformers
-- multimodal large language models (MLLMs / LVLMs / VLMs)
-- visual perception in multimodal models
-- fine-grained, region-level or high-resolution visual understanding
-- CLIP, SigLIP and vision-language representation learning
-- image-text alignment and retrieval
-- zero-shot or open-vocabulary vision-language generalization
-
-### Relevance Rules
-
-Highly relevant papers include:
-- MLLM / VLM quantization
-- visual token pruning or compression
-- ViT or vision encoder compression
-- efficient multimodal inference
-- CLIP compression or quantization
-- visual perception improvement for MLLMs
-
-Also keep strong papers about vision encoders, MLLMs, visual perception,
-CLIP and zero-shot vision-language learning.
+Give higher priority to papers combining model efficiency with multimodal or
+vision-language models, such as MLLM quantization, visual token pruning,
+multimodal model compression, and efficient VLM/MLLM inference.
 
 Mark a paper irrelevant if it mainly focuses on:
-- text-only LLMs
-- pure NLP
-- LLM serving or distributed systems unrelated to vision/model compression
-- benchmark-only or dataset-only work
-- application papers that only use an existing MLLM or CLIP
-- traditional detection, segmentation or medical imaging without broadly
-  useful compression, representation or vision-language methodology
-- pure diffusion generation unrelated to compression
+- text-only LLMs or pure NLP
+- general LLM serving, scheduling, networking, or distributed systems unrelated
+  to multimodal models or compression
+- benchmark-only, dataset-only, survey, or application-only work
+- traditional detection, segmentation, tracking, medical imaging, autonomous
+  driving, or remote sensing without broadly useful compression or multimodal methods
+- image-text retrieval or zero-shot recognition
+- pure diffusion generation
 
-Do NOT judge relevance only by keywords.
-Judge the paper's actual contribution.
+Judge the paper by its actual contribution, not by keyword matching alone.
+When uncertain, prefer precision over recall.
 
-If relevant, assign at most 3 tags from:
+If relevant, assign at most 3 strongly related tags from:
 {tag_descriptions}
 
-Generate a concise TLDR of no more than 50 words containing:
-1. the problem,
-2. the main method,
+Generate a TLDR of no more than 50 words containing:
+1. the main problem,
+2. the key method,
 3. one quantitative result if explicitly stated in the abstract.
 
-Return valid JSON only.
+Return JSON only.
 
 Relevant:
 {"relevant": true, "tags": ["tag1", "tag2"], "tldr": "..."}
@@ -120,23 +101,11 @@ TAGS = {
     "efficient-inference":
         "reducing inference FLOPs, latency, memory or computational cost",
 
-    "vision-encoder":
-        "vision encoders, Vision Transformers, visual backbones or vision foundation models",
-
-    "visual-perception":
-        "fine-grained, region-level, grounding or high-resolution visual perception",
-
     "MLLM":
         "multimodal large language models, LVLMs or vision-language models",
 
     "CLIP":
         "CLIP, SigLIP or contrastive vision-language representation learning",
-
-    "zero-shot":
-        "zero-shot or open-vocabulary vision-language generalization",
-
-    "retrieval":
-        "image-text or cross-modal retrieval",
 }
 
 

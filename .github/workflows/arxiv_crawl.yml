@@ -29,8 +29,8 @@ jobs:
           API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
       - name: Commit changes
         run: |
-          git config --local user.name "zhixin612"
-          git config --local user.email "zhao612@tju.edu.cn"
+          git config --local user.name "lixinyi5603-byte"
+          git config --local user.email "lixinyi5603@gmail.com"
           git commit -a -m "Update daily arxiv papers" || echo "No changes to commit"
           git push
         env: 

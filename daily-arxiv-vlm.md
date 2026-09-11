@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-17-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.09.09-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-25-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.09.10-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,24 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-09-10
+* `quantization` `efficient-inference` `MLLM` [OmniKVQuant: KV Cache Quantization for Omni-LLMs](http://arxiv.org/abs/2609.11582v1)
+  > **TL;DR**: 2-bit KV cache quantization for Omni-LLMs via temporal windowed key range and modality-specific value rotation, preserving performance on 7 audio-visual benchmarks.
+* `compression` `efficient-inference` [LOCUS: Task-Aware Low-Rank Post-Training for Token-Efficient Language Generation](http://arxiv.org/abs/2609.11739v1)
+  > **TL;DR**: Reduces LLM output sequence length by selecting task-aware low-rank adaptation subspaces, cutting tokens by up to 39.84% while updating only 0.24-0.28% of params.
+* `compression` `efficient-inference` `MLLM` [X-AuT: Progressive Audio-Encoder Compression for Speech LLMs with Cross-Scale Distillation](http://arxiv.org/abs/2609.11412v1)
+  > **TL;DR**: Progressive audio-encoder compression for speech LLMs via cross-scale distillation, reducing parameters by 20.7% (18→14 layers) while lowering error from 5.61% to 5.75%.
+* `compression` `efficient-inference` [X-RACE: XAI-assisted Recurrent neural network Attribution for Channel Estimation](http://arxiv.org/abs/2609.11211v1)
+  > **TL;DR**: Efficient LSTM for channel estimation via XAI-assisted pruning of input subcarriers and hidden units, reducing inference complexity by 44.1% while maintaining BER performance.
+* `compression` `efficient-inference` `token-pruning` [LOCUS: Task-Aware Low-Rank Post-Training for Token-Efficient Language Generation](http://arxiv.org/abs/2609.11739v1)
+  > **TL;DR**: Reduces LLM output length via task-aware low-rank adaptation (0.24-0.28% params), cutting Pythia-2.8B tokens by 39.84% without preference loss.
+* `quantization` `efficient-inference` `MLLM` [Why Does Post-Training Quantization Work?](http://arxiv.org/abs/2609.11716v1)
+  > **TL;DR**: Explains why PTQ works for LLMs despite error accumulation, identifying error cancellation between layers and LM-head geometry as key mechanisms enabling low-bit (e.g., INT8/INT4) quantization without significant performance loss.
+* `compression` `efficient-inference` `MLLM` [LILA: Calibration-Free Structured Pruning of Large Language Models via Latent Spectral Geometry](http://arxiv.org/abs/2609.11163v1)
+  > **TL;DR**: Calibration-free structured pruning of LLMs via spectral geometry, achieving 25% sparsity without training or calibration data, surpassing PruneNet by 1.57pp in zero-shot accuracy on LLaMA-2-7B.
+* `compression` `efficient-inference` `MLLM` [EMMI: Edge Multi-Modal Intelligence for Communication-Efficient MLLM Inference via Fused Representation Compression](http://arxiv.org/abs/2609.11058v1)
+  > **TL;DR**: Efficient MLLM inference via fused multimodal compression; modality-specific encoding and learned compression reduce comms by 32x, achieving 3.4x latency reduction for edge deployment.
+
 ### 2026-09-09
 * `compression` `quantization` `efficient-inference` [AgroVisNet: A lightweight Convolutional Network and the BD-PlantDX Expert-Validated Benchmark for Radish, Potato and Pointed Gourd Disease Classification](http://arxiv.org/abs/2609.10469v1)
   > **TL;DR**: Proposes a lightweight CNN (AgroVisNet) for plant disease classification, achieving 99.52% accuracy with only 290K parameters. Quantized to 0.46 MB (INT8) with minimal accuracy drop (0.22%), and runs in 8.40 ms per image on CPU.

@@ -2,7 +2,7 @@ name: Arxiv Paper Crawler
 
 on:
   schedule:
-    - cron: '0 0 */1 * *'  # Runs at UTC 00:00, every day. --> UTC+8 08:00
+    - cron: '30 1 * * *'  # Runs at UTC 00:00, every day. --> UTC+8 08:00
   workflow_dispatch:
     
 permissions:

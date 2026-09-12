@@ -1,8 +1,10 @@
 from __future__ import annotations
 
-import time
-import arxiv
+from datetime import datetime, timedelta
 from typing import Iterable, List
+
+import arxiv
+
 from config import logger
 
 
@@ -15,46 +17,104 @@ def fetch_arxiv_papers(
     start_date: str,
     end_date: str | None = None,
 ) -> List[dict]:
-    """Fetch papers from arXiv within a date window (inclusive of start day).
+    """
+    Fetch papers from arXiv within a date window.
 
     Args:
-        categories: e.g. ["cs.CV", "cs.AI", "cs.LG"] or "cs.CV".
-        start_date: YYYYMMDD.
-        end_date: YYYYMMDD. If None, equals start_date.
+        categories:
+            e.g. ["cs.CV", "cs.AI", "cs.LG"] or "cs.CV"
+        start_date:
+            YYYYMMDD
+        end_date:
+            YYYYMMDD. If None, equals start_date.
 
     Returns:
-        List of dicts with fields: title, link, abstract, authors, categories, id
+        List of dicts with:
+        title, link, abstract, authors, categories, id
     """
+
     cats = _ensure_list(categories)
     end = end_date or start_date
 
-    logger.info(f"Fetching arXiv papers for {cats} from {start_date} to {end}")
+    logger.info(
+        f"Fetching arXiv papers for {cats} from {start_date} to {end}"
+    )
+
+    # ------------------------------------------------------------------
+    # Correctly calculate the day after end_date.
+    # Do NOT use int(end) + 1 because dates such as 20260930 would
+    # incorrectly become 20260931.
+    # ------------------------------------------------------------------
+
+    end_next = (
+        datetime.strptime(end, "%Y%m%d") + timedelta(days=1)
+    ).strftime("%Y%m%d")
+
+    # ------------------------------------------------------------------
+    # Combine categories into ONE arXiv query.
+    #
+    # Example:
+    # (cat:cs.CV OR cat:cs.AI OR cat:cs.LG)
+    # AND submittedDate:[... TO ...]
+    #
+    # This avoids making three independent searches.
+    # ------------------------------------------------------------------
+
+    category_query = " OR ".join(f"cat:{cat}" for cat in cats)
+
+    query = (
+        f"({category_query}) "
+        f"AND submittedDate:[{start_date}0000 TO {end_next}0000]"
+    )
+
+    search = arxiv.Search(
+        query=query,
+        sort_by=arxiv.SortCriterion.SubmittedDate,
+        sort_order=arxiv.SortOrder.Descending,
+        max_results=5000,
+    )
+
+    logger.debug(f"Search: {search}")
+
+    # ------------------------------------------------------------------
+    # Slow down requests to reduce the chance of HTTP 429.
+    #
+    # page_size=100:
+    #   Smaller pages are generally more reliable.
+    #
+    # delay_seconds=10:
+    #   Wait at least 10 seconds between API page requests.
+    #
+    # num_retries=5:
+    #   Let the arxiv package retry failed requests.
+    # ------------------------------------------------------------------
+
+    client = arxiv.Client(
+        page_size=100,
+        delay_seconds=10.0,
+        num_retries=5,
+    )
 
     papers: list[dict] = []
-    client = arxiv.Client(page_size=200)
 
-    for cat in cats:
-        # arXiv range filter uses HHMM; we construct [YYYYMMDD0000, (end+1)0000)
-        search = arxiv.Search(
-            query=f"cat:{cat} AND submittedDate:[{start_date}0000 TO {str(int(end) + 1)}0000]",
-            sort_by=arxiv.SortCriterion.SubmittedDate,
-            sort_order=arxiv.SortOrder.Descending,
-            max_results=5000,
-        )
-        logger.debug(f"Search: {search}")
+    # Used to avoid duplicate papers.
+    # A paper may belong to multiple categories.
+    seen_ids: set[str] = set()
 
-        results: list[arxiv.Result] = []
-        # Retry modestly to tolerate transient network hiccups
-        for attempt in range(5):
-            try:
-                results = list(client.results(search))
-                break
-            except Exception as exc:
-                logger.warning(f"Attempt {attempt+1} failed: {exc}")
-                time.sleep(3)
+    try:
+        results = client.results(search)
 
         for r in results:
+
+            paper_id = r.entry_id
+
+            if paper_id in seen_ids:
+                continue
+
+            seen_ids.add(paper_id)
+
             logger.debug(f"Found paper: {r.title}")
+
             papers.append(
                 {
                     "title": r.title,
@@ -66,5 +126,18 @@ def fetch_arxiv_papers(
                 }
             )
 
+    except Exception as exc:
+        # Important:
+        # Do not silently pretend that "0 papers" means success.
+        logger.error(
+            f"Failed to fetch arXiv papers after retries: {exc}"
+        )
+
+        # Let GitHub Actions fail.
+        # This prevents the current date from being incorrectly marked
+        # as successfully processed.
+        raise
+
     logger.info(f"Fetched {len(papers)} papers total")
+
     return papers

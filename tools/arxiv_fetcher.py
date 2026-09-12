@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import time
 from datetime import datetime, timedelta
 from typing import Iterable, List
 
@@ -40,74 +41,57 @@ def fetch_arxiv_papers(
         f"Fetching arXiv papers for {cats} from {start_date} to {end}"
     )
 
-    # ------------------------------------------------------------------
-    # Correctly calculate the day after end_date.
-    # Do NOT use int(end) + 1 because dates such as 20260930 would
-    # incorrectly become 20260931.
-    # ------------------------------------------------------------------
-
+    # Correctly calculate the next day.
     end_next = (
         datetime.strptime(end, "%Y%m%d") + timedelta(days=1)
     ).strftime("%Y%m%d")
 
-    # ------------------------------------------------------------------
-    # Combine categories into ONE arXiv query.
-    #
-    # Example:
-    # (cat:cs.CV OR cat:cs.AI OR cat:cs.LG)
-    # AND submittedDate:[... TO ...]
-    #
-    # This avoids making three independent searches.
-    # ------------------------------------------------------------------
-
-    category_query = " OR ".join(f"cat:{cat}" for cat in cats)
-
-    query = (
-        f"({category_query}) "
-        f"AND submittedDate:[{start_date}0000 TO {end_next}0000]"
-    )
-
-    search = arxiv.Search(
-        query=query,
-        sort_by=arxiv.SortCriterion.SubmittedDate,
-        sort_order=arxiv.SortOrder.Descending,
-        max_results=5000,
-    )
-
-    logger.debug(f"Search: {search}")
-
-    # ------------------------------------------------------------------
-    # Slow down requests to reduce the chance of HTTP 429.
-    #
-    # page_size=100:
-    #   Smaller pages are generally more reliable.
-    #
-    # delay_seconds=10:
-    #   Wait at least 10 seconds between API page requests.
-    #
-    # num_retries=5:
-    #   Let the arxiv package retry failed requests.
-    # ------------------------------------------------------------------
-
+    # Slow down API requests to reduce HTTP 429.
     client = arxiv.Client(
         page_size=100,
-        delay_seconds=10.0,
+        delay_seconds=15.0,
         num_retries=5,
     )
 
     papers: list[dict] = []
-
-    # Used to avoid duplicate papers.
-    # A paper may belong to multiple categories.
     seen_ids: set[str] = set()
 
-    try:
-        results = client.results(search)
+    # Query each category separately.
+    # This is more reliable than combining several categories with OR.
+    for index, cat in enumerate(cats):
+        query = (
+            f"cat:{cat} AND "
+            f"submittedDate:[{start_date}0000 TO {end_next}0000]"
+        )
+
+        search = arxiv.Search(
+            query=query,
+            sort_by=arxiv.SortCriterion.SubmittedDate,
+            sort_order=arxiv.SortOrder.Descending,
+            max_results=5000,
+        )
+
+        logger.debug(f"Search: {search}")
+
+        try:
+            results = list(client.results(search))
+        except Exception as exc:
+            logger.error(
+                f"Failed to fetch category {cat} after retries: {exc}"
+            )
+
+            # Do not treat API failure as "0 papers".
+            # Let GitHub Actions fail so this date can be retried later.
+            raise
+
+        logger.info(
+            f"Fetched {len(results)} papers from category {cat}"
+        )
 
         for r in results:
-
             paper_id = r.entry_id
 
+            # A paper may belong to multiple categories.
             if paper_id in seen_ids:
                 continue
 
@@ -126,18 +110,16 @@ def fetch_arxiv_papers(
                 }
             )
 
-    except Exception as exc:
-        # Important:
-        # Do not silently pretend that "0 papers" means success.
-        logger.error(
-            f"Failed to fetch arXiv papers after retries: {exc}"
-        )
+        # Additional pause between different category queries.
+        # No need to sleep after the final category.
+        if index < len(cats) - 1:
+            logger.info(
+                "Waiting 15 seconds before fetching the next category..."
+            )
+            time.sleep(15)
 
-        # Let GitHub Actions fail.
-        # This prevents the current date from being incorrectly marked
-        # as successfully processed.
-        raise
-
-    logger.info(f"Fetched {len(papers)} papers total")
+    logger.info(
+        f"Fetched {len(papers)} unique papers total"
+    )
 
     return papers

@@ -4,7 +4,7 @@
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
 ![Static Badge](https://img.shields.io/badge/total_papers-25-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.09.10-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/update-2026.09.11-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)

@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-25-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.09.12-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-30-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.09.13-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,18 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-09-11
+* `quantization` `efficient-inference` [Attention Quantization for Tabular Foundation Models](http://arxiv.org/abs/2609.13031v1)
+  > **TL;DR**: Quantizes attention computation (queries, keys, values) to FP8 in tabular foundation models, achieving 1.7x speedup with no accuracy loss via aligned training-test quantization.
+* `compression` `efficient-inference` [Behavior Quotient Learning for Low-Rank Adaptation of LLM Agents](http://arxiv.org/abs/2609.12896v1)
+  > **TL;DR**: Addresses LoRA storage and routing overhead in LLM agents via BQ-LoRA, which balances trajectory updates and compresses gradients under fixed-rank constraints, achieving efficient low-rank adaptation without distorting decision distributions.
+* `quantization` `efficient-inference` `MLLM` [Quality-Constrained Routing over a Fixed Pool of Quantized Mixture-of-Experts Instances](http://arxiv.org/abs/2609.12550v1)
+  > **TL;DR**: Proposes quality-aware routing for quantized MoE models (W2/W3/W4) using Fragility-Weighted Perplexity (FWP) to balance quality vs. throughput, achieving 2.5% better efficiency than baselines with mean ΔNLL of 0.0513 at W4.
+* `compression` `efficient-inference` [Theoretical Guarantees for One-Shot Magnitude Pruning and Compute-Adaptive Early Exit](http://arxiv.org/abs/2609.12337v1)
+  > **TL;DR**: Studies one-shot magnitude pruning and early exits for compute reduction; proves theoretical guarantees for pruning efficiency and shows decay of generalization error with compute gap. Theoretical and empirical results support scaling laws.
+* `compression` `quantization` `efficient-inference` [ESTS at WMT26: Routing-Informed Expert Pruning for Model Compression](http://arxiv.org/abs/2609.12310v1)
+  > **TL;DR**: Combines expert pruning (1. routing-informed selection, 2. cross-lingual divergence) with MXFP4 quantization on GPT-OSS-20B, yielding models from 4.186B to 7.770B params and 4.55-6.33GiB sizes while maintaining translation quality.
+
 ### 2026-09-10
 * `quantization` `efficient-inference` `MLLM` [OmniKVQuant: KV Cache Quantization for Omni-LLMs](http://arxiv.org/abs/2609.11582v1)
   > **TL;DR**: 2-bit KV cache quantization for Omni-LLMs via temporal windowed key range and modality-specific value rotation, preserving performance on 7 audio-visual benchmarks.

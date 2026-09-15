@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-30-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.09.13-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-37-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.09.14-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,24 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-09-14
+* `quantization` `efficient-inference` [VC-Attention: Value Smoothing and Softmax Casting for Low-bit Attention](http://arxiv.org/abs/2609.15810v1)
+  > **TL;DR**: Addressing outliers and softmax bottleneck in low-bit attention for efficient deployment. Uses value smoothing with online clustering and ExpCast-FP8 for fused probability casting. Achieves 1.46-1.59x speedup over BF16 FlashAttention-4 on datacenter GPUs.
+* `token-pruning` `efficient-inference` `MLLM` [Don't Send What You Don't Need: Question-Guided Token Pruning as a Privacy Defense for Vision-Language Models](http://arxiv.org/abs/2609.15671v1)
+  > **TL;DR**: Privacy-aware VLMs with question-guided token pruning (40% tokens retained) for efficient transmission, using Dynamic Threshold Predictor; reduces privacy attack success from 0.99 to 0.76-0.79 while maintaining VQA accuracy.
+* `token-pruning` `efficient-inference` `MLLM` [MarKey: Marginal Utility Guided Greedy Keyframe Selection for Long Video Understanding](http://arxiv.org/abs/2609.15408v1)
+  > **TL;DR**: Efficient video understanding via subset-aware greedy keyframe selection (MarKey) to reduce redundant frames, achieving robust gains in multimodal LLMs across diverse benchmarks.
+* `compression` `efficient-inference` `token-pruning` [SparseTalk - Sparsifying 3D Gaussian Language Fields for Efficient 3D Visual Question Answering](http://arxiv.org/abs/2609.15137v1)
+  > **TL;DR**: Reduces dense 3D Gaussian language fields via sparsification for efficient VQA. Uses object-based token selection, cutting input from 32K to 256 tokens (0.8% original size) with 125x memory reduction while retaining performance, showing field redundancy.
+* `token-pruning` `quantization` `MLLM` [AdaVSkip: Adaptive Visual Token Skipping Across Layers For Efficient MLLMs Inference](http://arxiv.org/abs/2609.15131v1)
+  > **TL;DR**: AdaVSkip reduces MLLM computation by adaptively skipping visual tokens across layers via lightweight routers, achieving 53.2% FLOPs reduction and preserving performance. Combine with token compression for 91.2% FLOPs reduction.
+
+### 2026-09-13
+* `compression` `efficient-inference` [Sparsity-Adaptive Sharpness-Aware Minimization](http://arxiv.org/abs/2609.14274v1)
+  > **TL;DR**: Improves corruption robustness of pruned models at 80-90% sparsity via sparsity-adaptive SAM and MWH, enhancing clean accuracy and inference throughput.
+* `quantization` `efficient-inference` [WaterKron and FlipFlop Hessian: Information-Theoretically Grounded Quantization with Kronecker-factored Hessians](http://arxiv.org/abs/2609.14706v1)
+  > **TL;DR**: Proposes WaterKron for PTQ with Kronecker-factored Hessians, using two-sided GPTQ and entropy coding. Derives distortion penalty, leading to optimal FlipFlop Hessian. Improves KL divergence and perplexity.
+
 ### 2026-09-11
 * `quantization` `efficient-inference` [Attention Quantization for Tabular Foundation Models](http://arxiv.org/abs/2609.13031v1)
   > **TL;DR**: Quantizes attention computation (queries, keys, values) to FP8 in tabular foundation models, achieving 1.7x speedup with no accuracy loss via aligned training-test quantization.

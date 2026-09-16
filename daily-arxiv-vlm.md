@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-37-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.09.14-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-48-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.09.15-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,30 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-09-15
+* `token-pruning` `efficient-inference` `MLLM` [BrainFocus: EEG-Guided ROI Selection for Efficient Vision-Language Models](http://arxiv.org/abs/2609.17443v1)
+  > **TL;DR**: Reduces VLM inference cost via EEG-guided ROI selection, cutting input tokens by 23.2%-39.4% and FLOPs by 23.2%-39.5% while improving accuracy.
+* `token-pruning` `efficient-inference` `MLLM` [StackTok: Accelerating VLMs Inference with Budget-Adaptive Visual Token Selection](http://arxiv.org/abs/2609.16841v1)
+  > **TL;DR**: Reduces VLM inference cost via budget-adaptive visual token selection, achieving 95.26% full-token performance with 5.6% tokens (160/2880) in LLaVA-NeXT-7B.
+* `token-pruning` `efficient-inference` `MLLM` [VideoMM: Adaptive Macro-Micro Inference for Efficient Video MLLMs](http://arxiv.org/abs/2609.16722v1)
+  > **TL;DR**: Addresses video MLLM inefficiency by decoupling selection from reasoning, using macro proxies for token pruning and micro tokens for detailed reasoning. Achieves 6.13× speedup and 7.4% accuracy gain over baselines.
+* `quantization` `compression` `MLLM` [Efficient Quantization-Aware Distillation with Cross-Modal Alignment for Edge Vision-Language Models](http://arxiv.org/abs/2609.16689v1)
+  > **TL;DR**: Quantization-aware distillation for edge VLMs, using QAT within a unified teacher-anchored framework with cross-attention adapters. Achieves efficient deployment while improving non-RGB modality performance.
+* `quantization` `token-pruning` `efficient-inference` [Channel-Wise and Token-Aware Post-Training Quantization for Visual State Space Duality](http://arxiv.org/abs/2609.16656v1)
+  > **TL;DR**: Addressing activation quantization bottleneck in VSSD models via channel-wise token-balanced output-aware clipping (CTOAC), achieving strong robustness at low-bit settings (precision not specified). COCO/ADE20K task performance preserved with 1.42x speedup on RTX 4090 over FP32.
+* `efficient-inference` `quantization` [JustFit: 200K-Token LLM Serving on a 24 GiB Laptop with Just-in-Time State Management](http://arxiv.org/abs/2609.17475v1)
+  > **TL;DR**: Efficient LLM serving on laptops via JustFit runtime with compressed KV execution (MXFP4). Achieves 6.93x context increase (212,992 tokens) and 19.11 tokens/s throughput.
+* `efficient-inference` `compression` `MLLM` [FlexEE: Self-Speculative and KV-Compatible Early Exiting for Offloading-Aware LLM Inference](http://arxiv.org/abs/2609.17008v1)
+  > **TL;DR**: Reduces LLM inference cost via early exiting, self-speculative decoding, and KV-cache optimization, achieving 1.27-3.16x speedup on Llama2-7B with layer reduction.
+* `token-pruning` `efficient-inference` `MLLM` [StackTok: Accelerating VLMs Inference with Budget-Adaptive Visual Token Selection](http://arxiv.org/abs/2609.16841v1)
+  > **TL;DR**: Efficiency problem: High-resolution images increase visual tokens in VLMs. Method: Budget-adaptive token selection (StackTok) balances query relevance and visual coverage without retraining. Result: Retains 95.26% performance with only 5.6% (160/2880) tokens on LLaVA-NeXT-7B.
+* `token-pruning` `efficient-inference` `MLLM` [VideoMM: Adaptive Macro-Micro Inference for Efficient Video MLLMs](http://arxiv.org/abs/2609.16722v1)
+  > **TL;DR**: Addresses token explosion in video MLLMs via adaptive macro-micro inference, decoupling selection (low-cost macro proxy) from reasoning (high-fidelity micro tokens). Achieves 6.13× speedup over full-context baselines with 7.4% accuracy gain on LongVideoBench.
+* `token-pruning` `efficient-inference` [Protocol-Preserving Context Trimming for Agentic Workflows: Benefits, Failure Regimes, and Budget Guardrails](http://arxiv.org/abs/2609.16461v1)
+  > **TL;DR**: Protocol-preserving context trimming for LLM agentic workflows reduces token usage (56% savings) while maintaining high task success (96.0%) and protocol adherence (96.3%), outperforming conventional methods by selectively preserving critical state.
+* `efficient-inference` `token-pruning` [Early-Bird Decoding: Accelerating Diffusion LLMs with Learnable Block Sizes and Parallel Sampling](http://arxiv.org/abs/2609.16450v1)
+  > **TL;DR**: Accelerates diffusion LLM inference by adaptively grouping low-entropy tokens into variable-length blocks for parallel decoding, achieving up to 18.76x higher throughput without modifying pretrained weights.
+
 ### 2026-09-14
 * `quantization` `efficient-inference` [VC-Attention: Value Smoothing and Softmax Casting for Low-bit Attention](http://arxiv.org/abs/2609.15810v1)
   > **TL;DR**: Addressing outliers and softmax bottleneck in low-bit attention for efficient deployment. Uses value smoothing with online clustering and ExpCast-FP8 for fused probability casting. Achieves 1.46-1.59x speedup over BF16 FlashAttention-4 on datacenter GPUs.

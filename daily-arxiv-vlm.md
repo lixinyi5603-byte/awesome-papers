@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-48-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.09.15-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-58-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.09.16-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,28 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-09-16
+* `compression` `efficient-inference` [PULSE: Unlocking Practical Image Compression on Single-Thread CPU](http://arxiv.org/abs/2609.18602v1)
+  > **TL;DR**: Proposes PULSE, a practical image codec for CPU-constrained devices with a low-complexity neural receiver (5.2 kMAC/pixel) and efficient entropy coding, decoding 1080p images in 126 ms on a single CPU thread, matching HM compression performance.
+* `token-pruning` `efficient-inference` [Decoder-Agnostic Token Merging for Vision Transformers: A Systematic Study of G2TM](http://arxiv.org/abs/2609.18279v1)
+  > **TL;DR**: Proposes Graph-Guided Token Merging (G2TM) for Vision Transformers, systematically evaluating across various decoders. Reduces GFLOPs by 22-47% and increases throughput by 74% on ADE20K, with minimal accuracy drop.
+* `compression` `efficient-inference` [Unified Response Geometry for Structured Pruning](http://arxiv.org/abs/2609.18239v1)
+  > **TL;DR**: Proposes structured pruning via joint response capacity selection, achieving 67.7% Top-1 accuracy on ImageNet ResNet-50 at 40% pruning without fine-tuning.
+* `token-pruning` `efficient-inference` `compression` [Position Anchor Tuning: Towards Efficient Adaptation of Pre-Trained Point Cloud Transformers](http://arxiv.org/abs/2609.18056v1)
+  > **TL;DR**: Improves inference efficiency of point cloud transformers via token aggregation-expansion pairs (TAM-TEM), reducing computation-heavy MHA/FFN blocks. Achieves comparable performance with lower computational overhead and fewer trainable parameters.
+* `efficient-inference` `token-pruning` `MLLM` [rMuscle: Robotic Muscle Memory for Efficient Vision-Language-Action Model Inference](http://arxiv.org/abs/2609.19104v1)
+  > **TL;DR**: Reduces VLA model latency by reusing visual tokens and neuron activations via dual-phase cache, maintaining success rates while achieving 1.29-1.42x speedup on robotic tasks.
+* `compression` `efficient-inference` [Higher-order pruning of experts in mixture-of-experts language models](http://arxiv.org/abs/2609.18916v1)
+  > **TL;DR**: Problem: MoE model parameter reduction in 122B-scale models. Method: Higher-order expert pruning (HOPE) preserves cooperative interactions. Result: At 50% pruning rate, HOPE achieves 1.58 avg rank (vs 2.42 baseline) with +6.1% gain on agentic coding.
+* `quantization` `efficient-inference` `compression` [The Other Half of the Memory Wall: Serving 35B MoEs from SSD with Trained Routing Prediction](http://arxiv.org/abs/2609.18063v1)
+  > **TL;DR**: Efficient serving of 35B MoEs via SSD offloading with trained routing prediction and 4-bit quantization, achieving 20tok/s with 3GiB peak memory, close to fp16 accuracy.
+* `compression` `efficient-inference` [Higher-order pruning of experts in mixture-of-experts language models](http://arxiv.org/abs/2609.18916v1)
+  > **TL;DR**: Prunes Mixture-of-Experts models via second-order objective (HOPE) preserving expert cooperation. Achieves best rank (1.58) at 50% pruning, +6.1% gain on agentic coding.
+* `quantization` `efficient-inference` `compression` [Colla-Q: Toward Collaborative Experts in MoE Quantization via Minimax Precision Balancing](http://arxiv.org/abs/2609.18131v1)
+  > **TL;DR**: Quantization of MoE models with activation-entropy-based bit allocation to balance expert performance, maintaining robustness and reducing calibration dataset dependence.
+* `quantization` `efficient-inference` [A Calibrated Instrument for Measuring How Inference Optimizations Affect Output Quality](http://arxiv.org/abs/2609.18005v1)
+  > **TL;DR**: Proposes a calibrated method to measure quality impact of LLM optimizations. Tests 4-bit and 3-bit quantization, showing 4-bit matches 16-bit baseline, while 3-bit loses 0.5-1.1 points across domains. Also compares early-exit methods, revealing domain-dependent quality drops.
+
 ### 2026-09-15
 * `token-pruning` `efficient-inference` `MLLM` [BrainFocus: EEG-Guided ROI Selection for Efficient Vision-Language Models](http://arxiv.org/abs/2609.17443v1)
   > **TL;DR**: Reduces VLM inference cost via EEG-guided ROI selection, cutting input tokens by 23.2%-39.4% and FLOPs by 23.2%-39.5% while improving accuracy.

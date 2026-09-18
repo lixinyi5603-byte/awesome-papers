@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-58-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.09.16-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-66-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.09.17-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,24 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-09-17
+* `compression` `efficient-inference` [PhGS: Post-Hoc Pruning and Refinement of Single-View Feed-Forward 3D Gaussian Reconstructions](http://arxiv.org/abs/2609.20623v1)
+  > **TL;DR**: Reduces spatial redundancy in single-view 3D Gaussian Splatting via post-hoc pruning and recurrent refinement, achieving high memory reduction while preserving rendering fidelity without retraining.
+* `quantization` `compression` `efficient-inference` [Cross-Architecture Foundation-Model Distillation for Edge Flood Segmentation](http://arxiv.org/abs/2609.20441v1)
+  > **TL;DR**: Distills 300M Prithvi-EO-2.0 into 0.7M EfficientViT-B0 for edge deployment; uses quantization-aware training to achieve INT8 (1.5MB) with 5.57ms/image and 14MB memory on Jetson Xavier NX.
+* `compression` `efficient-inference` [A Smaller Transformer in Your Transformer](http://arxiv.org/abs/2609.20100v1)
+  > **TL;DR**: Reduces Transformer depthwise redundancy by fusing contiguous layers into surrogate layers (TWT), halving depth while maintaining performance, reducing parameters and compute without degradation.
+* `token-pruning` `MLLM` `efficient-inference` [QCPruner: Query-Conditioned Population Coverage for Visual Token Pruning](http://arxiv.org/abs/2609.19990v1)
+  > **TL;DR**: Efficient token pruning for MLLMs with query-conditioned utility weighting, retaining 96.1% performance at 32/576 tokens on LLaVA-1.5-7B.
+* `token-pruning` `efficient-inference` `MLLM` [Region-Level Policy Optimization for Fine-grained MLLM Perception](http://arxiv.org/abs/2609.19745v1)
+  > **TL;DR**: Proposes Vision-RL2 for MLLM token efficiency, using reinforcement learning to optimize region proposals and prune background tokens, achieving ~4x fewer visual tokens without accuracy loss.
+* `efficient-inference` `token-pruning` [Understanding and Exploiting Diagonal Attention Sparsity in Autoregressive Image Generation](http://arxiv.org/abs/2609.19702v1)
+  > **TL;DR**: Reduces attention computation in autoregressive image generation by exploiting diagonal sparsity, achieving 3.1x throughput with <2% quality drop.
+* `quantization` `efficient-inference` `MLLM` [MiX: Micro-Inverted-Scaling for End-to-End Low-Bit Vision-Language Model Acceleration](http://arxiv.org/abs/2609.19683v1)
+  > **TL;DR**: Proposes Micro-Inverted-Scaling (MiX) for end-to-end 4.5-bit VLM quantization, handling outliers via shared mantissa grouping, achieving 2.3-4.5x speedup and 1.4-2.9x energy reduction vs. prior work while maintaining accuracy.
+* `quantization` `compression` `efficient-inference` [Cross-Architecture Foundation-Model Distillation for Edge Flood Segmentation](http://arxiv.org/abs/2609.20441v1)
+  > **TL;DR**: Distills a 300M Prithvi-EO-2.0 teacher to a 0.7M EfficientViT-B0 student, then quantizes to INT8 (1.5MB), achieving 5.57ms inference per 512x512 image on Jetson Xavier NX.
+
 ### 2026-09-16
 * `compression` `efficient-inference` [PULSE: Unlocking Practical Image Compression on Single-Thread CPU](http://arxiv.org/abs/2609.18602v1)
   > **TL;DR**: Proposes PULSE, a practical image codec for CPU-constrained devices with a low-complexity neural receiver (5.2 kMAC/pixel) and efficient entropy coding, decoding 1080p images in 126 ms on a single CPU thread, matching HM compression performance.

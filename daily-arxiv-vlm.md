@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-66-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.09.19-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-72-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.09.20-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,20 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-09-18
+* `quantization` `efficient-inference` [ZYT-World: A Real-Time Controllable World Model for Closed-Loop Autonomous-Driving Simulation](http://arxiv.org/abs/2609.21712v1)
+  > **TL;DR**: Proposes W8A8 quantization for a real-time autonomous-driving world model, achieving 107.7× speedup over original teacher model while retaining 90% PSNR.
+* `quantization` `efficient-inference` [Quantization-Aware Kalman Estimation for Diffusion Sampling](http://arxiv.org/abs/2609.21407v1)
+  > **TL;DR**: Addresses sampling errors in W4A4 quantized diffusion models with a plug-and-play Kalman estimator (QuAKE) for trajectory-aware correction, reducing distributional discrepancy.
+* `compression` `efficient-inference` [Accelerating Dense LLMs via L0-regularized Mixture-of-Experts](http://arxiv.org/abs/2609.21672v1)
+  > **TL;DR**: L0-regularized Mixture-of-Experts (L0-MoE) reduces dense LLM inference cost by 2.5x via sparsity and dynamic batching without performance loss.
+* `quantization` `efficient-inference` `MLLM` [SpecQuant: Speculative Decoding with Multi-Parent Quantization for Adaptive LLM Inference](http://arxiv.org/abs/2609.21704v1)
+  > **TL;DR**: Combines speculative decoding with multi-parent INT4/FP8/FP16 quantization for adaptive LLM inference, achieving 35-43% speedups without >2% accuracy drop on Qwen2.5 models.
+* `quantization` `efficient-inference` `MLLM` [Understanding LLM Quantization through Activation-Guided Compensation and Orthogonal Residuals](http://arxiv.org/abs/2609.21450v1)
+  > **TL;DR**: LLM W4A4 quantization challenge from activation outliers solved via error decomposition into weight compensation and orthogonal residuals, using Hadamard rotation and scaling. Achieves competitive results on Llama/Mistral models without backprop.
+* `efficient-inference` `compression` [TierKV: Long-Context On-Device LLMs via Predictive Multi-Tier KV Caching](http://arxiv.org/abs/2609.21172v1)
+  > **TL;DR**: Reduces KV-cache memory bottleneck in mobile LLMs via predictive multi-tier caching (exact, low-rank, flash-offloaded tiers), achieving 12.5-34% RAM reduction and 17.6x prefill throughput improvement while maintaining accuracy.
+
 ### 2026-09-17
 * `compression` `efficient-inference` [PhGS: Post-Hoc Pruning and Refinement of Single-View Feed-Forward 3D Gaussian Reconstructions](http://arxiv.org/abs/2609.20623v1)
   > **TL;DR**: Reduces spatial redundancy in single-view 3D Gaussian Splatting via post-hoc pruning and recurrent refinement, achieving high memory reduction while preserving rendering fidelity without retraining.

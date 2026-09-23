@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-114-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.09.21-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-134-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.09.22-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,48 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-09-22
+* `token-pruning` `efficient-inference` [GTR: Gated Token Recurrence for Efficient Dense Prediction](http://arxiv.org/abs/2609.26590v1)
+  > **TL;DR**: Proposes GTR, a softmax-free recurrent vision backbone with gated linear attention for efficient dense prediction, achieving 1.908ms latency with FP16 execution on RTX 4090 and 4x speedup in kernel benchmark.
+* `token-pruning` `efficient-inference` `MLLM` [From Token Importance to Conditional Removability: Rethinking Visual Token Pruning in Multimodal Large Language Models](http://arxiv.org/abs/2609.26484v1)
+  > **TL;DR**: Conditional token removability (not just importance) for visual token pruning in MLLMs; CoRePrune framework with perturbation-aware pruning and set-conditioned refinement; achieves 90.3% dense-model performance with 128 visual tokens (51% prefill time reduction).
+* `quantization` `efficient-inference` [PP-Net: A Hybrid Physical-Prior Neural Network for Scattered Light Removal in Biomedical Images on Embedded Devices](http://arxiv.org/abs/2609.26474v1)
+  > **TL;DR**: Proposes PP-Net for biomedical scattered light removal, optimized for embedded devices with INT8 quantization, achieving 200 ms latency per 512x512 image.
+* `quantization` `token-pruning` `efficient-inference` [QuantWM: Temporally Consistent 2-Bit KV Cache Quantization for World Models and Video Generation](http://arxiv.org/abs/2609.26425v1)
+  > **TL;DR**: 2-bit KV cache quantization for world models, QuantWM uses sensitivity-aware clustering and attention compensation to reduce flickering, achieving 6.20x memory compression with better quality than prior methods.
+* `token-pruning` `efficient-inference` `MLLM` [Shallow to Deep: Aligning Token Pruning with Stage-wise Roles in LVLMs](http://arxiv.org/abs/2609.25635v1)
+  > **TL;DR**: Reduces visual token redundancy in LVLMs via hierarchical pruning: spectral analysis (shallow), Gaussian-smoothed attention (intermediate), and stability-adaptive triggering (deep). Achieves 94.4% token reduction (+2.1% accuracy) and 3.9x speed-up on LLaVA-NeXT-7B.
+* `quantization` `efficient-inference` `MLLM` [Train Where the Quantized Model Goes: On-Policy Distillation for Low-Bit Reasoning](http://arxiv.org/abs/2609.26708v1)
+  > **TL;DR**: Addresses reasoning degradation in sub-3-bit quantized models via on-policy distillation (OPD), improving BF16 performance retention from 35% to 70% on MATH-500 at 2.79/1.88 effective bits.
+* `quantization` `efficient-inference` [PP-Net: A Hybrid Physical-Prior Neural Network for Scattered Light Removal in Biomedical Images on Embedded Devices](http://arxiv.org/abs/2609.26474v1)
+  > **TL;DR**: Proposes PP-Net for scattered light removal in biomedical images, optimized for embedded devices with INT8 quantization, achieving ~200 ms inference latency per 512x512 image.
+* `quantization` `efficient-inference` `MLLM` [QuantWM: Temporally Consistent 2-Bit KV Cache Quantization for World Models and Video Generation](http://arxiv.org/abs/2609.26425v1)
+  > **TL;DR**: 2-bit KV cache quantization for video generation, using sensitivity-aware clustering and attention compensation to reduce visual degradation. Achieves 6.20x memory compression with improved temporal consistency.
+* `token-pruning` `efficient-inference` [CompKV: Compensation-Aware KV Selection for Long-Context LLM Inference](http://arxiv.org/abs/2609.26300v1)
+  > **TL;DR**: KV cache bottleneck in LLM long-context inference. CompKV selects tokens based on compensation error impact, optimizing selection for mean compensation. Up to 6.85× speedup in self-attention over full attention.
+* `compression` `efficient-inference` `MLLM` [You Only Need 2/3 of the Chosen Experts: An Empirical Study of Dynamic Expert Pruning in Fine-Grained MoE LLMs](http://arxiv.org/abs/2609.25809v1)
+  > **TL;DR**: Performs dynamic expert pruning in fine-grained MoE LLMs, showing 66% expert pruning retains 98.8% unpruned performance, achieving 1.2-1.7x speedup.
+* `compression` `efficient-inference` `MLLM` [Compressing Long Context into Answer-Aligned Memory Embeddings for LLM Inference](http://arxiv.org/abs/2609.25537v1)
+  > **TL;DR**: Compresses long LLM contexts into answer-aligned memory embeddings, reducing KV cache and GPU memory by 50% via query-guided selection and answer distillation, cutting inference time by 20%.
+* `quantization` `MLLM` `efficient-inference` [Train Where the Quantized Model Goes: On-Policy Distillation for Low-Bit Reasoning](http://arxiv.org/abs/2609.26708v1)
+  > **TL;DR**: On-policy distillation addresses quantization-amplified exposure bias for sub-3-bit models, combining QAD and OPD to retain 70% of BF16 performance on MATH-500 and 91% on HumanEval at 1.88-2.79 bits.
+* `token-pruning` `efficient-inference` [GTR: Gated Token Recurrence for Efficient Dense Prediction](http://arxiv.org/abs/2609.26590v1)
+  > **TL;DR**: Proposes GTR, a softmax-free recurrent vision backbone for efficient dense prediction, reducing quadratic attention cost. Achieves 1.908ms latency on RTX 4090 with FP16 inference.
+* `quantization` `efficient-inference` [PP-Net: A Hybrid Physical-Prior Neural Network for Scattered Light Removal in Biomedical Images on Embedded Devices](http://arxiv.org/abs/2609.26474v1)
+  > **TL;DR**: PP-Net addresses efficient scattered light removal for biomedical images on embedded devices with INT8 quantization, achieving 200ms latency per 512x512 image.
+* `quantization` `efficient-inference` `MLLM` [Disaggregated Quantization: Specializing LLM Prefill and Decode](http://arxiv.org/abs/2609.26333v1)
+  > **TL;DR**: Optimizes LLM prefill and decode phases via disaggregated quantization (DQ), specializing compute formats and weights. Achieves 1.78x speedup at 8K prompt length with 2-3-bit decode, improving accuracy by 32.5 points on MMLU-Pro with NVFP4 prefiller.
+* `token-pruning` `efficient-inference` `MLLM` [CompKV: Compensation-Aware KV Selection for Long-Context LLM Inference](http://arxiv.org/abs/2609.26300v1)
+  > **TL;DR**: Optimizes KV cache selection for long-context LLM inference by jointly considering token importance and compensation error, achieving 6.85× speedup over full attention via block-based token pruning.
+* `compression` `efficient-inference` [GeoPair: Geometry-Preserving Cross-Layer Factorization for Training-Free Transformer Compression](http://arxiv.org/abs/2609.25963v1)
+  > **TL;DR**: Solves transformer layer redundancy via geometry-preserving cross-layer factorization, achieving efficient structured sparsity without retraining, outperforming independent decompositions.
+* `quantization` `efficient-inference` `MLLM` [Beyond Scalar Sensitivity: Activation-Aware Mixed-Precision LLM Quantization with Cross-Layer Refinement](http://arxiv.org/abs/2609.25916v1)
+  > **TL;DR**: Addresses unreliable scalar proxies in mixed-precision LLM quantization by proposing CASA, an activation-aware, cross-layer method. Achieves lower perplexity at <3 bits/weight, with gains tied to condition numbers.
+* `compression` `efficient-inference` `token-pruning` [You Only Need 2/3 of the Chosen Experts: An Empirical Study of Dynamic Expert Pruning in Fine-Grained MoE LLMs](http://arxiv.org/abs/2609.25809v1)
+  > **TL;DR**: Fine-grained MoE LLMs enable dynamic expert pruning; retaining 2/3 of experts preserves 98.8% performance with 1.2-1.7x speedup, showing high expert redundancy.
+* `quantization` `efficient-inference` `token-pruning` [Latest Exact Match Attention](http://arxiv.org/abs/2609.25802v1)
+  > **TL;DR**: LEMA binarizes queries and keys in transformers for exact-match attention, reducing compute via binary ops (1-bit), enabling constant-time token retrieval, and matching half-sized softmax transformers' performance while maintaining inference speed.
+
 ### 2026-09-21
 * `token-pruning` `efficient-inference` `MLLM` [SLICEChat: Progressive In-Encoder Token Pruning for Whole-Slide Pathology Language Models](http://arxiv.org/abs/2609.24894v1)
   > **TL;DR**: Efficient pathology MLLM with in-encoder token pruning via hybrid Mamba-Transformer encoder and language-supervised pruning, achieves 59.09-79.84% accuracy with competitive latency on gigapixel WSIs.

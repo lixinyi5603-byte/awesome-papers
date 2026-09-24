@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-134-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.09.22-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-150-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.09.23-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,40 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-09-23
+* `compression` `efficient-inference` [LightMIS: Ultra-Lightweight Medical Image Segmentation Without a Stage-Wise Decoder](http://arxiv.org/abs/2609.28327v1)
+  > **TL;DR**: Ultra-lightweight medical image segmentation model (LightMIS) reduces parameters by 90-99.6% and FLOPs by 82.5-96.1% via Scale-Aligned Projection and Adaptive Fusion Cascade, achieving 0.131M params and 0.575GFLOPs for a 3x256x256 input.
+* `quantization` `efficient-inference` [RAMP: Robust Adaptive Mixed-Precision Quantization for Edge CPU Vision Models](http://arxiv.org/abs/2609.28262v1)
+  > **TL;DR**: Proposes RAMP, a robust adaptive mixed-precision quantization method for edge CPU vision models, using Jensen-Shannon Divergence and K-Means clustering for layer-wise INT8 quantization. Achieves near-lossless accuracy with a mean 1.81× speed-up over full-precision models.
+* `token-pruning` `efficient-inference` `compression` [Task-Induced Riemannian Metrics for Vision Transformer Feature Spaces](http://arxiv.org/abs/2609.27988v1)
+  > **TL;DR**: Develops a low-rank spectral pullback network (SPN) for task-sensitive token pruning, reducing depth error by 25% at 0.5 prune ratio with a 310K-parameter importance head.
+* `quantization` `compression` `efficient-inference` [MicroQonv: Reshaping Convolution Tensors for Efficient Microscaling in Training and Inference](http://arxiv.org/abs/2609.28358v1)
+  > **TL;DR**: Efficient microscaling quantization for conv layers via modified im2col + single quantization pass, reducing memory movement by ×7.53 and enabling 4-bit quantization with minimal accuracy loss.
+* `compression` `token-pruning` `efficient-inference` [Stable Geometry with Divergent Task Evidence for Efficient Long-Horizon Agent Compression](http://arxiv.org/abs/2609.27332v1)
+  > **TL;DR**: Efficient agent history compression via evidence-preserving token pruning. Geometry Guided Evidence Preserving Memory (GEM) reduces token usage by 21.4% (2.69M to 2.11M) while maintaining task reward by prioritizing task evidence over geometric redundancy.
+* `compression` `efficient-inference` `MLLM` [KITE: KV-Invariant Transformer Expansion for Efficient Agentic LLM Scaling](http://arxiv.org/abs/2609.27294v1)
+  > **TL;DR**: Reduces LLM inference costs via KV-invariant expansion, saving 6.7-31.6% inference cost at 2.15B active parameters using a two-tower decoder for efficient KV generation.
+* `token-pruning` `efficient-inference` [DRSR: Learning Set-Level Deletion Risk for Efficient Long-Horizon Agents](http://arxiv.org/abs/2609.27276v1)
+  > **TL;DR**: Problem: agent-history compression for efficient long-horizon agents. Method: Direct Relational Set-Risk Pruning (DRSR) for structured token deletion. Result: 20.82% fewer tokens while improving reward from 0.699 to 0.802.
+* `quantization` `efficient-inference` [Predicting Quantization Price for Selecting PTQ Configurations Before Deployment](http://arxiv.org/abs/2609.28270v1)
+  > **TL;DR**: Proposes a price-guided selection method for PTQ configurations to predict and minimize output-distribution drift before deployment, using error covariance and downstream curvature to optimize bit allocation and quantization parameters.
+* `quantization` `efficient-inference` [RAMP: Robust Adaptive Mixed-Precision Quantization for Edge CPU Vision Models](http://arxiv.org/abs/2609.28262v1)
+  > **TL;DR**: Proposes RAMP for mixed-precision INT8 quantization on edge CPUs using Jensen-Shannon Divergence for layer-wise sensitivity analysis, achieving near-lossless accuracy with 1.81x speed-up.
+* `compression` `efficient-inference` [Tensor Decomposition of Transformer Key-Value Caches: Spectral Structure and Format Comparison](http://arxiv.org/abs/2609.28029v1)
+  > **TL;DR**: Analyzes key-value cache as tensor, applies Tucker decomposition for 2-5x compression, achieves lowest error for values, identifies full-rank modes to leave uncompressed, post-RoPE keys lose 41-64% compressibility.
+* `token-pruning` `efficient-inference` `compression` [Task-Induced Riemannian Metrics for Vision Transformer Feature Spaces](http://arxiv.org/abs/2609.27988v1)
+  > **TL;DR**: Proposes task-induced metrics for ViT feature spaces, enabling token pruning via a 310K-parameter importance head, reducing depth error by 25% at prune ratio 0.5.
+* `compression` `efficient-inference` [Six Layers Less: Encoder Pruning for Whisper with Label-Free Recovery](http://arxiv.org/abs/2609.27980v1)
+  > **TL;DR**: Prunes Whisper encoder by removing 6 layers (18.5%) based on WER sensitivity, achieving 20.1% WER post-distillation (vs 18.2% baseline) without custom inference code.
+* `compression` `efficient-inference` [Attention Routing Stabilizes Early: Working-Set Inference for Recurrent Language Models](http://arxiv.org/abs/2609.27373v1)
+  > **TL;DR**: Reduces recurrent LM inference cost by exploiting early attention stabilization; reuses sparse working-set context to limit computation; achieves 1.76× speedup at 4K context without losing performance.
+* `efficient-inference` `compression` `quantization` [KITE: KV-Invariant Transformer Expansion for Efficient Agentic LLM Scaling](http://arxiv.org/abs/2609.27294v1)
+  > **TL;DR**: Efficient agentic LLM scaling via KV-invariant expansion, reducing inference cost by 31.6% for a 67B MoE model with 2.15B active parameters per token.
+* `compression` `efficient-inference` [NGN: Learning Neural Network Size as a Differentiable Count](http://arxiv.org/abs/2609.27291v1)
+  > **TL;DR**: Problem: selecting optimal model size before training. Method: differentiable learning of structural component counts via learnable boundary; post-deployment discarding of unused components. Key result: learned prefixes perform similarly to fixed-size models of same size.
+* `compression` `quantization` `efficient-inference` [Reliable Federated TinyML Deployment for IoT Security](http://arxiv.org/abs/2609.27202v1)
+  > **TL;DR**: Federated TinyML for IoT security combines knowledge distillation, pruning, and quantization to reduce model size for resource-constrained devices, achieving 93.85% Attack Recall with stable training.
+
 ### 2026-09-22
 * `token-pruning` `efficient-inference` [GTR: Gated Token Recurrence for Efficient Dense Prediction](http://arxiv.org/abs/2609.26590v1)
   > **TL;DR**: Proposes GTR, a softmax-free recurrent vision backbone with gated linear attention for efficient dense prediction, achieving 1.908ms latency with FP16 execution on RTX 4090 and 4x speedup in kernel benchmark.

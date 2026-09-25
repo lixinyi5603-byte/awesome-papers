@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-150-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.09.23-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-170-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.09.24-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,48 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-09-24
+* `compression` `quantization` `efficient-inference` [Towards Practical Compression of 3D Gaussian Splatting](http://arxiv.org/abs/2609.30245v1)
+  > **TL;DR**: Addresses high storage in 3D Gaussian Splatting via anchor-wise causal factorization and adaptive Gaussian pruning; introduces quantization-aware training and integer inference for cross-platform consistency; achieves state-of-the-art compression performance.
+* `efficient-inference` `compression` [Accelerating Video Diffusion via Training-Free Trajectory Routing](http://arxiv.org/abs/2609.30096v1)
+  > **TL;DR**: Efficient video diffusion via training-free trajectory routing, using large/small model switching based on relative disagreement scores, achieving 1.95x-2.73x speedups.
+* `quantization` `compression` `efficient-inference` [AERIAL: Adversarial Evaluation of Robustness in Accuracy-Preserving Low-Precision EEG Decoders](http://arxiv.org/abs/2609.30037v1)
+  > **TL;DR**: Evaluates robustness impact of INT8 quantization (PTQ/QAT) and 50% pruning on EEG decoders. Pruning reduces adversarial transfer efficiency, while PTQ maintains 95-98% prediction consistency with FP32.
+* `quantization` `MLLM` `efficient-inference` [GHOST-Q: Towards Studying Grounding Hallucinations Overlooked Under Same-score TradeOffs in Quantized VLMS](http://arxiv.org/abs/2609.29999v1)
+  > **TL;DR**: Evaluates INT8 and NF4 quantized VLMs (8B params) on grounding hallucinations, showing same accuracy but shifts in failures, with 10/36 significant effects in hallucination-sensitive tasks.
+* `token-pruning` `efficient-inference` [When Can Agents Forget Their Reasoning? ICLR for Long-Horizon Agent Context Compression](http://arxiv.org/abs/2609.29875v1)
+  > **TL;DR**: Compresses long-horizon agent reasoning history via Interaction Aware Compression (ICLR), reducing input/output/cache tokens by up to 33.3% while preserving task performance (reward 0.699→0.718).
+* `compression` `efficient-inference` [Dense Coverage, Sparse Refinement: Byte-Constrained Cooperative Perception](http://arxiv.org/abs/2609.29456v1)
+  > **TL;DR**: Efficient BEV feature compression for collaborative perception via coverage-refinement design with task-aware benefit selection. Achieves 0.60 AP@0.7 at 1.87 KB per agent vs 0.52 at 4.61 KB.
+* `token-pruning` `efficient-inference` `MLLM` [Exploiting answer-invariant redundancies in satellite imagery for efficient VLM inference on edge](http://arxiv.org/abs/2609.29029v1)
+  > **TL;DR**: Finds answer-invariant redundant tokens (AITR) in satellite VLM inference; prunes tiles & tokens via query-conditioned pruning & elastic prefill in LLaVA. Reduces energy 78%, latency 69%, ups accuracy to 73%.
+* `quantization` `MLLM` `efficient-inference` [GHOST-Q: Towards Studying Grounding Hallucinations Overlooked Under Same-score TradeOffs in Quantized VLMS](http://arxiv.org/abs/2609.29999v1)
+  > **TL;DR**: Evaluates PTQ effects on VLMs' grounding behavior under INT8/NF4, showing preserved accuracy but altered hallucinations and latency, with 10/36 significant paired effects on hallucination-sensitive tasks.
+* `token-pruning` `efficient-inference` [When Can Agents Forget Their Reasoning? ICLR for Long-Horizon Agent Context Compression](http://arxiv.org/abs/2609.29875v1)
+  > **TL;DR**: Reduces context length and inference cost in long-horizon agents by pruning historical reasoning. Uses Interaction Aware Compression for Long Horizon Reasoning (ICLR) to rank and remove reasoning blocks. Reduces input, output, and cache read tokens by 25.5%, 14.4%, and 33.3% while improving reward.
+* `compression` `efficient-inference` [Less is More: Encoder-only Audio-Visual Segmentation](http://arxiv.org/abs/2609.29121v1)
+  > **TL;DR**: Reducing redundant components in AVSS model for efficiency. Proposes encoder-only architecture (EASE), achieves 365 FPS (3x speedup over SotA) with comparable accuracy.
+* `quantization` `compression` `efficient-inference` [AERIAL: Adversarial Evaluation of Robustness in Accuracy-Preserving Low-Precision EEG Decoders](http://arxiv.org/abs/2609.30037v1)
+  > **TL;DR**: Analyzes EEG model robustness under accuracy-preserving INT8 PTQ/QAT and 50% pruning. Finds no direct robustness improvement, but PTQ maintains higher adversarial transfer (0.994/0.997) vs pruning. Validated with TensorRT deployment.
+* `quantization` `MLLM` `efficient-inference` [GHOST-Q: Towards Studying Grounding Hallucinations Overlooked Under Same-score TradeOffs in Quantized VLMS](http://arxiv.org/abs/2609.29999v1)
+  > **TL;DR**: Analyzes hallucination issues in INT8/NF4 VLMs, showing FP16 accuracy preserved but 10/36 grounding effects significant, with A100 profiling revealing latency-memory tradeoffs.
+* `quantization` `efficient-inference` [Does per-frame early exit pay? A compute-matched study of dynamic depth for on-device speech enhancement](http://arxiv.org/abs/2609.29867v1)
+  > **TL;DR**: Optimizes dynamic depth speech enhancement for on-device int8 inference, achieving 0.11 higher PESQ at equivalent compute or 30% less compute for same PESQ, with minimal latency overhead.
+* `quantization` `compression` `efficient-inference` [Beyond Model Size: Redesigning LiSenNet for embedded speech enhancement](http://arxiv.org/abs/2609.29866v1)
+  > **TL;DR**: Optimizes speech enhancement model for microcontroller NPUs via operator reformulation and int8 quantization, achieving PESQ 3.01 (vs 2.93 baseline) with 4.83ms latency per 16ms input.
+* `quantization` `token-pruning` `efficient-inference` [FlashLoop: Fast and Memory-Efficient Looped Transformers via Lazy Updates](http://arxiv.org/abs/2609.29812v1)
+  > **TL;DR**: Reduces redundancy in looped transformers via token-sparse updates and KV-residual quantization (low-bit) + sparse attention, achieving 6x memory reduction and 1.64x speedup.
+* `compression` `efficient-inference` `MLLM` [Decoupled Early Exits for Task-Dependent Compute Allocation in Flow-Matching VLAs](http://arxiv.org/abs/2609.29382v1)
+  > **TL;DR**: Efficient compute allocation for VLAs via decoupled early exits and KV cache synthesis, reducing latency by 79.2% and FLOPs by 31.8% while improving success rate.
+* `compression` `efficient-inference` [TinyCardioUNet: IMU-to-ECG Translation with Graph-Encoded Inter-Axis Dependencies and Tensor Decomposition-Based Parameter Reduction](http://arxiv.org/abs/2609.29322v1)
+  > **TL;DR**: Proposes a lightweight TinyCardioUNet for IMU-to-ECG translation using tensor decomposition for parameter reduction (36.0k parameters) and achieves RMSE 0.098.
+* `token-pruning` `efficient-inference` `MLLM` [Exploiting answer-invariant redundancies in satellite imagery for efficient VLM inference on edge](http://arxiv.org/abs/2609.29029v1)
+  > **TL;DR**: Efficient VLM inference by pruning answer-invariant tokens in satellite imagery. Proposes Rift for query-conditioned tile pruning and elastic prefill. 78% energy and 69% latency reduction for LLaVA-1.5 7B.
+* `compression` `efficient-inference` [Automatic Rank Allocation for Low-Rank Adaptation in Large Language Models via lp Regularization](http://arxiv.org/abs/2609.28998v1)
+  > **TL;DR**: Automates rank allocation in LoRA for LLMs via ℓp regularization, optimizing efficiency without manual tuning, achieving competitive performance on NLP tasks.
+* `quantization` `efficient-inference` [Same Bit Width, Different Outcomes: Post-Training Quantization of Text-to-Speech Across Architectures](http://arxiv.org/abs/2609.28974v1)
+  > **TL;DR**: Evaluates PTQ across TTS architectures, identifying model-specific sensitive components. 4-bit weights reduce UTMOS by 2.8 on Supertonic, with per-layer GPTQ restoring near-original quality. 4-bit kernels achieve 0.6x fp32 latency on Mac mini.
+
 ### 2026-09-23
 * `compression` `efficient-inference` [LightMIS: Ultra-Lightweight Medical Image Segmentation Without a Stage-Wise Decoder](http://arxiv.org/abs/2609.28327v1)
   > **TL;DR**: Ultra-lightweight medical image segmentation model (LightMIS) reduces parameters by 90-99.6% and FLOPs by 82.5-96.1% via Scale-Aligned Projection and Adaptive Fusion Cascade, achieving 0.131M params and 0.575GFLOPs for a 3x256x256 input.

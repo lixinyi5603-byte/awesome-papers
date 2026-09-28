@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-170-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.09.26-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-194-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.09.27-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,56 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-09-25
+* `token-pruning` `compression` `efficient-inference` [Where Compute Matters: Heterogeneous Attention for Efficient Video Diffusion](http://arxiv.org/abs/2609.31050v1)
+  > **TL;DR**: Adaptive token pruning for video diffusion models using heterogeneous attention, routing only 20% tokens to dense attention while maintaining quality.
+* `compression` `efficient-inference` [Training-Free Bottleneck Width Planning for Convolutional Autoencoders](http://arxiv.org/abs/2609.30755v1)
+  > **TL;DR**: Training-free method (MS-SRD) plans bottleneck width for autoencoders using spectral analysis, achieving 0.84% error in latent-size prediction at NMSE ≤ 0.01, and matching deployment widths without training.
+* `efficient-inference` `token-pruning` `quantization` [DeepEdu-v1: Efficient and Scalable Agentic LLMs for Vietnamese Education](http://arxiv.org/abs/2609.31568v1)
+  > **TL;DR**: Addresses long-context inference inefficiency and KV cache overhead in LLMs for education; uses token selection at cluster granularity (x7.7 fewer retrievals) and PTQ (AWQ/GPTQ) for weights; reduces prefill latency by 35% and improves accuracy to 79.5%.
+* `compression` `efficient-inference` `MLLM` [ActKV: Efficient LLM Agents through Action-Guided KV Cache Management](http://arxiv.org/abs/2609.31395v1)
+  > **TL;DR**: Reduces KV cache memory in agentic LLMs by prioritizing action-critical entries, achieving 25.98% peak memory with 98.53% accuracy, and 3.97X token throughput.
+* `quantization` `efficient-inference` [The Right Information Extraction Pipeline Depends on the Document: Accuracy-Energy Trade-offs for Small, Local Models](http://arxiv.org/abs/2609.31341v1)
+  > **TL;DR**: Studies energy-accuracy trade-offs for on-premise document processing using small models (≤8B params). FP8 quantization saves 27-32% energy in single-request settings, while batching reduces energy by 38-85% per page.
+* `quantization` `efficient-inference` `compression` [Softmax Reparameterization for Output-Head Quantization](http://arxiv.org/abs/2609.31291v1)
+  > **TL;DR**: Proposes softmax reparameterization for post-training quantization of output heads in small LMs, achieving W4 (INT4) quantization with KL divergence reduced from 0.936 to 0.256 on Phi-4-mini, and 10.8% lower latency while preserving model accuracy.
+* `compression` `efficient-inference` `token-pruning` [Acoustic-to-Text KV Compression for Full-Duplex Speech Models](http://arxiv.org/abs/2609.31224v1)
+  > **TL;DR**: Reduces KV cache memory in full-duplex speech models by 64.6% via acoustic-to-text compression and eviction of older states, keeping recent context and transcripts for efficient streaming.
+* `quantization` `efficient-inference` `compression` [Teacher-Anchored Selection of Post-Training Quantized Models under Domain Shift](http://arxiv.org/abs/2609.31155v1)
+  > **TL;DR**: Proposes teacher-anchored selection for domain-shifted post-training quantized models, focusing on 8-bit unclipped configurations. Method reduces regret with minimal labels, outperforming confidence-based estimators across 134 model families.
+* `quantization` `efficient-inference` `MLLM` [G$^2$PTQ: Improving LLM Post-Training Quantization with Generalized Gradient Compensation](http://arxiv.org/abs/2609.31009v1)
+  > **TL;DR**: Proposes G²PTQ for improved PTQ of LLMs via globally supervised block-wise optimization with dynamic gradient & Hessian updates. Achieves better alignment with full-precision models across various bit-widths.
+* `token-pruning` `efficient-inference` `MLLM` [Skip the Talk, Re-Focus on Vision: Latent Reasoning for Reasoning Segmentation in Multimodal Large Language Models](http://arxiv.org/abs/2609.30783v1)
+  > **TL;DR**: Reduces reasoning tokens in MLLMs for segmentation by replacing explicit CoT with compact learnable latent tokens, achieving 16x token reduction and +4.9% gIoU on ReasonSeg.
+* `token-pruning` `efficient-inference` [Selective Amortization of Full-Budget Counterfactual Reasoning for Visual Token Communication](http://arxiv.org/abs/2609.30756v1)
+  > **TL;DR**: Optimizes visual token communication by selectively evaluating the most informative tokens, reducing encoder computation. ACV-Gate combines terminal-value learning with selective refinement, achieving 27.6% fewer evaluations and 0.636 dB PSNR gain at 0.20 bpp.
+* `compression` `quantization` `efficient-inference` [Weight Pair Encoding: Inducing a Smaller Grammar in Neural Network Weights](http://arxiv.org/abs/2609.31564v1)
+  > **TL;DR**: Weight Pair Encoding compresses neural network weights by applying grammar-based compression techniques (Re-Pair, int8 quantization) within training, achieving 0.38-0.43x grammar size reduction vs int8 QAT at 1.1-1.9 accuracy cost on ViT models.
+* `quantization` `compression` [Generalization behavior of OPTQ and the role of regularization](http://arxiv.org/abs/2609.31560v1)
+  > **TL;DR**: Studies quantization via OPTQ and stochastic OPTQ, focusing on generalization bounds and regularization role in minimizing squared quantization error. Proves bounds for generalization error and recommends new λ setting, with favorable experimental results.
+* `compression` `efficient-inference` [Scaffold: Support Graph Theory Based Sparsification for Graph Neural Networks](http://arxiv.org/abs/2609.31466v1)
+  > **TL;DR**: Reduces GNN computational cost via topology-aware graph sparsification, preserving key edges (10%-50% retained) while maintaining accuracy, cutting memory by >50% and improving training speed.
+* `quantization` `efficient-inference` `MLLM` [Towards Understanding LLM-Based Log Anomaly Detection: An Empirical Study of Performance, Efficiency, and Robustness](http://arxiv.org/abs/2609.31371v1)
+  > **TL;DR**: Analyzes efficiency vs. accuracy trade-offs in LLM-based log anomaly detection; low-bit quantization preserves accuracy with lower compute costs; empirical results show varying computational costs for models with similar accuracy.
+* `quantization` `compression` `efficient-inference` [Softmax Reparameterization for Output-Head Quantization](http://arxiv.org/abs/2609.31291v1)
+  > **TL;DR**: Post-training method for output head quantization via softmax reparameterization, enabling W4 and W2 quantization with 10.8% latency reduction, reducing AW-MSE KL from 0.936 to 0.256.
+* `quantization` `efficient-inference` `compression` [Teacher-Anchored Selection of Post-Training Quantized Models under Domain Shift](http://arxiv.org/abs/2609.31155v1)
+  > **TL;DR**: Selects optimal quantized models (e.g., 8-bit) under domain shift via teacher-anchored selection, reducing label dependency. Achieves 8-bit per-channel quantization with improved selection stability, reducing mean regret at low label budgets.
+* `compression` `efficient-inference` [KuaFu: Compressing Long User Behavior into Understanding at Billion Scale](http://arxiv.org/abs/2609.31045v1)
+  > **TL;DR**: Compresses long user behavior sequences (10x-20x) into 2-4 tokens (128-256 width) per item, improving throughput 37%-350% and reducing GPUs by 190 while maintaining downstream task performance.
+* `quantization` `efficient-inference` [Low-Bit Recurrent States in Hybrid Language Models](http://arxiv.org/abs/2609.30950v1)
+  > **TL;DR**: Quantizes recurrent states in hybrid LMs with mixed-precision bit allocation (4-6 bits), using distortion weights and range normalization, reducing negative log-likelihood by 3.3-27.9x vs baselines at 4 bits with minimal FP32 gap at 6 bits.
+* `quantization` `efficient-inference` [The KV Cache Is the New Memory Wall](http://arxiv.org/abs/2609.30854v1)
+  > **TL;DR**: Addresses KV cache memory bottleneck in LLM inference with techniques including quantization to cut bandwidth, especially impactful at <4-bit precision, achieving bandwidth savings near theoretical limits at long contexts.
+* `quantization` `efficient-inference` `compression` [Quantizing Looped Transformers: Feedback Exposure and Calibration Blindness](http://arxiv.org/abs/2609.30820v1)
+  > **TL;DR**: Low-bit INT4 quantization of looped transformers suffers from feedback exposure and calibration blindness. Accumulating Hessian across steps recovers bf16 accuracy on Huginn-3.5B.
+* `token-pruning` `efficient-inference` [Beyond Mean Attention: Diversity-Aware, Layer-Wise Scoring for KV Cache Eviction](http://arxiv.org/abs/2609.30738v1)
+  > **TL;DR**: Efficient KV cache eviction using diversity-aware layer-wise scoring to reduce memory footprint, improving performance by +1.1 to +13.2 on Mistral-7B at budgets of 32-128 entries per layer.
+* `compression` `efficient-inference` [Input-Layer Starvation: Why Per-Layer Pruning Breaks IoT Intrusion Detectors](http://arxiv.org/abs/2609.30729v1)
+  > **TL;DR**: Input-layer pruning causes severe class-level failures in IoT intrusion detectors. Uniform layer-wise pruning at 80% sparsity drops macro-F1 by half (0.542 to 0.271). Protecting first-layer weights prevents collapse (loss 0.013) and maintains performance.
+* `quantization` `efficient-inference` `MLLM` [LUMO (Lightweight Unified Multilingual Orchestrator): A Privacy Preserving Offline Voice Assistant](http://arxiv.org/abs/2609.30692v1)
+  > **TL;DR**: Offline voice assistant LUMO uses 4-bit GGUF quantization for LLM, achieving 6.8% WER, 2.0-4.0s latency, and 9.0W power on Raspberry Pi 5.
+
 ### 2026-09-24
 * `compression` `quantization` `efficient-inference` [Towards Practical Compression of 3D Gaussian Splatting](http://arxiv.org/abs/2609.30245v1)
   > **TL;DR**: Addresses high storage in 3D Gaussian Splatting via anchor-wise causal factorization and adaptive Gaussian pruning; introduces quantization-aware training and integer inference for cross-platform consistency; achieves state-of-the-art compression performance.

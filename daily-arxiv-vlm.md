@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-299-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.09.28-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-347-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.09.30-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,104 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-09-29
+* `compression` `efficient-inference` [TSGL: Teacher-Student Graph Learning for 3DGS Compression](http://arxiv.org/abs/2609.38635v1)
+  > **TL;DR**: Compresses 3DGS models by 27x-33x using Teacher-Student Graph Learning and Graph Fourier Transform, reducing file sizes with <0.6dB PSNR loss.
+* `efficient-inference` `token-pruning` `compression` [$S^3$: Spectral Null-Space Swap Makes Reasoning Models Efficient](http://arxiv.org/abs/2609.37976v1)
+  > **TL;DR**: Proposes $S^3$ to improve reasoning efficiency in LLMs by leveraging null-space components, reducing token overhead by 27.4% while increasing accuracy by 1.0pp.
+* `token-pruning` `efficient-inference` `MLLM` [TReVS: Integrating Textual Relevance and Visual Saliency for Efficient Vision-Language Model Token Pruning](http://arxiv.org/abs/2609.37581v1)
+  > **TL;DR**: Efficient visual token pruning via text-visual joint saliency and high-variance attention, pruning 94.4% tokens while retaining 92.8% performance in LLaVA-1.5-7B.
+* `token-pruning` `efficient-inference` `MLLM` [ResComEmb: Effective and Efficient Multimodal Embedding via Residual Homogeneity Compression](http://arxiv.org/abs/2609.37225v1)
+  > **TL;DR**: Problem: High storage and interaction costs from long visual token sequences in MLLMs. Solution: Residual Homogeneity Compression (RHC) module under visual token budgets. Result: Outperforms ColQwen2.5 in document retrieval using only 37.5% visual tokens.
+* `token-pruning` `efficient-inference` `MLLM` [EviViT: Evidence-Adaptive Vision Transformers for Fine-Grained Perception](http://arxiv.org/abs/2609.37123v1)
+  > **TL;DR**: Reduces visual tokens via evidence-adaptive token allocation for fine-grained perception in ViTs, achieving higher accuracy with fewer tokens than global-only processing.
+* `quantization` `compression` `MLLM` [Task-Oriented Visual Feature Compression via Residual Vector Quantization for Device-Edge Multimodal Inference](http://arxiv.org/abs/2609.37090v1)
+  > **TL;DR**: Reduces visual payload by 53.6% for device-edge LMM inference via query-guided feature aggregation and residual vector quantization.
+* `token-pruning` `efficient-inference` `MLLM` [OmniRoute: Mapping Temporal Semantic Evidence to Audio-Visual Token Budgets for Efficient Omnimodal Large Language Models](http://arxiv.org/abs/2609.37052v1)
+  > **TL;DR**: Proposes OmniRoute for token-level compression in audio-visual LLMs, dynamically adjusting token budgets based on temporal semantic relevance. Reduces prefill latency with training-free token selection and merging, achieving better efficiency-performance trade-off on 4 benchmarks.
+* `token-pruning` `efficient-inference` `MLLM` [GleanVID: Complementary Token Selection for Efficient Video Large Language Models](http://arxiv.org/abs/2609.37042v1)
+  > **TL;DR**: Efficient VideoLLMs via complementary token selection. GleanVID selects tokens across frames to preserve informative & complementary evidence within a 25% token budget, reducing prefill latency by 44.7% while retaining 98.6% of Qwen3-VL's performance.
+* `compression` `efficient-inference` `token-pruning` [UltraMatch: Transport Path Routing for Ultra-Fast and Memory-Efficient Image Matching](http://arxiv.org/abs/2609.36980v1)
+  > **TL;DR**: Dense token-level matching is expensive. UltraMatch routes only a few paths, uses sparse Dual-Softmax and tiny fine matching head. 1.67x faster than SuperPoint+LightGlue, 0.44 GiB memory, scales to 6K resolution.
+* `quantization` `efficient-inference` [Chinese-Jev: Bringing System One Model to Chinese-Language Tasks](http://arxiv.org/abs/2609.36965v1)
+  > **TL;DR**: INT8-quantized Chinese-Jev model achieves 1.0s latency per decision on mobile devices, offering 20.3x speedup over baseline while maintaining accuracy.
+* `token-pruning` `efficient-inference` `MLLM` [Representation Dynamics Reveal Semantic Saliency and Similarity for Visual Token Pruning in MLLMs](http://arxiv.org/abs/2609.36916v2)
+  > **TL;DR**: Reduces MLLM inference latency via visual token pruning using layer-dependent update magnitudes & direction similarities, preserving 91.9% performance with 5.6% tokens and 7.8x speedup.
+* `compression` `efficient-inference` [Does the VGGT Family Need All Its Layers?](http://arxiv.org/abs/2609.36842v1)
+  > **TL;DR**: Identifies redundant layers in VGGT models with structured pruning, reducing parameters by 44% without accuracy drop, using layer degradation analysis and linear calibration.
+* `compression` `token-pruning` `efficient-inference` [NesTok: Nested Self-Aligned 1D Tokenizer for Autoregressive Image Generation](http://arxiv.org/abs/2609.36756v2)
+  > **TL;DR**: NesTok introduces cross-length training for 1D variable-length visual tokenizers, improving reconstruction and generation efficiency. Achieves rFID 0.98 on ImageNet.
+* `token-pruning` `efficient-inference` `MLLM` [FocusVTC: Efficient and High-Performance Visual Text Compression with Adaptive Resolution](http://arxiv.org/abs/2609.36651v1)
+  > **TL;DR**: Efficient visual text compression via adaptive resolution and selective region enhancement. Achieves 2.9x input compression (72 DPI) with 87.4 score vs. 57.5 for baseline.
+* `quantization` `compression` `efficient-inference` [ShamAN-Q: Shampoo Augmented NanoQuant for Sub-1-bit LLM Weights](http://arxiv.org/abs/2609.38521v1)
+  > **TL;DR**: Sub-1-bit post-training quantization (PTQ) method (0.8-1 bpw) for LLMs using curvature-aware reconstruction with Fisher information, improving WikiText-2 perplexity from 27.56 to 22.96 at 1 bpw (0.6B model).
+* `quantization` `compression` `efficient-inference` [Security-Enhanced Seed-Based Weight Quantization for Large Language Models](http://arxiv.org/abs/2609.38477v1)
+  > **TL;DR**: Security-enhanced seed-based weight quantization for LLMs with non-uniform bit allocation (down to 4-bit), achieving better perplexity than SeedLM at same bit-rate while providing security benefits against bit-flip attacks.
+* `quantization` `efficient-inference` `MLLM` [STEPQuant: When and Where Errors Matter in Delta-Rule Recurrent State Quantization](http://arxiv.org/abs/2609.38169v1)
+  > **TL;DR**: Addresses memory bottleneck in linear attention's recurrent states via spatial-temporal PTQ (STEPQuant), allocating precision by error magnitude and memory lifetime. Achieves FP32 accuracy with 6-bit and outperforms INT8 with 4-bit, reducing serving memory by 68.7%.
+* `quantization` `efficient-inference` [LeapQuant: Efficient Linear Attention with Accurate Recurrent State Quantization](http://arxiv.org/abs/2609.38166v1)
+  > **TL;DR**: Solves error accumulation & outliers in 8-bit recurrent state quantization for LLM linear attention via per-window quantization & compensator tokens, achieving 2.05-3.7x kernel speedups with FP32 accuracy.
+* `token-pruning` `compression` `efficient-inference` [KV-Kaizen: Learning Context-Adaptive Cache Compression Choices](http://arxiv.org/abs/2609.37988v2)
+  > **TL;DR**: Proposes KV-Kaizen for LLM KV cache compression via adaptive depth, precision (fewer bits), and rank reduction. Achieves 32x smaller cache on 14B model with no accuracy loss.
+* `efficient-inference` `compression` [$S^3$: Spectral Null-Space Swap Makes Reasoning Models Efficient](http://arxiv.org/abs/2609.37976v1)
+  > **TL;DR**: Reduces token cost in reasoning LLMs by null-space optimization, achieving 27.4% fewer tokens and +1.0% accuracy.
+* `compression` `efficient-inference` `MLLM` [DIET: Deletion-response Expert Trimming for Video Diffusion Transformers](http://arxiv.org/abs/2609.37829v1)
+  > **TL;DR**: Prunes 50% MoE experts in video diffusion transformers via deletion-response signatures, reducing model size from 57GB to 30GB while improving VBench score (0.7941 to 0.8115) without fine-tuning.
+* `token-pruning` `efficient-inference` `MLLM` [FOCUS: Training-Free Decision-Preserving Context Compression for LLM Agents](http://arxiv.org/abs/2609.37590v1)
+  > **TL;DR**: Problem: quadratic inference cost from growing LLM agent histories. Method: training-free causal decision-preserving context compression. Result: 48% context reduction, 73% dependency cut, and 8.9% task success improvement.
+* `token-pruning` `efficient-inference` `MLLM` [TReVS: Integrating Textual Relevance and Visual Saliency for Efficient Vision-Language Model Token Pruning](http://arxiv.org/abs/2609.37581v1)
+  > **TL;DR**: Efficient visual token pruning in VLMs by integrating text relevance with visual saliency and high-variance attention heads, achieving 92.8% performance retention with 94.4% tokens pruned.
+* `compression` `efficient-inference` `token-pruning` [Task-Relevant Null-Space Residuals for Non-Injective Neural Mappings](http://arxiv.org/abs/2609.37272v1)
+  > **TL;DR**: Improves token merging by preserving task-relevant null-space residuals, achieving +31.51 mIoU under strong compression.
+* `token-pruning` `efficient-inference` `MLLM` [ResComEmb: Effective and Efficient Multimodal Embedding via Residual Homogeneity Compression](http://arxiv.org/abs/2609.37225v1)
+  > **TL;DR**: Addresses visual token redundancy in MLLMs via Residual Homogeneity Compression, reducing token budget by 62.5% while improving retrieval performance.
+* `compression` `efficient-inference` `MLLM` [IronLLM: Forging Compact Edge-Native Language Models for Real-Time Embodied Intelligence](http://arxiv.org/abs/2609.36860v1)
+  > **TL;DR**: Efficient on-device LLM with 654M params, using hybrid attention and lightweight KV-cache design for 1.48x decoding speedup, optimized for low-latency with simplified components.
+* `compression` `efficient-inference` `MLLM` [ARC-KV: Amortizing Anchor Search for Reconstruction-Based KV Cache Compaction](http://arxiv.org/abs/2609.36835v1)
+  > **TL;DR**: KV cache compression for LLMs. ARC-KV amortizes anchor selection via a learned indexer, enabling reusable context-specific compaction. At 10% KV retention, improves accuracy by 0.0065 and reduces compaction time 25x vs baseline (37.3s vs 959.8s).
+* `quantization` `MLLM` `efficient-inference` [Calibrate the Decisions That Change the Future: On-Policy Post-Training Quantization for Multimodal Large Language Models](http://arxiv.org/abs/2609.36828v1)
+  > **TL;DR**: Proposes OnPTQ for MLLMs, combining decision-consequence risk for autoregressive-aware PTQ, improving downstream performance in low-bit settings (specific bit-widths not stated) with fewer correctness flips versus FP16.
+* `token-pruning` `efficient-inference` [Aperture: Merge-Consistent Rotary States for Compressed Tokens](http://arxiv.org/abs/2609.36781v1)
+  > **TL;DR**: Proposes Aperture for merge-consistent rotary states in token compression, addressing positional information loss during merging. Achieves 65.63% accuracy in video QA vs 67.12% for baseline merging.
+* `token-pruning` `compression` `efficient-inference` [NesTok: Nested Self-Aligned 1D Tokenizer for Autoregressive Image Generation](http://arxiv.org/abs/2609.36756v2)
+  > **TL;DR**: Dynamic visual tokenizer with cross-length training for adaptive compression, improves rFID to 0.98 on ImageNet, enabling flexible trade-offs between quality and computational cost.
+* `token-pruning` `efficient-inference` `MLLM` [FocusVTC: Efficient and High-Performance Visual Text Compression with Adaptive Resolution](http://arxiv.org/abs/2609.36651v1)
+  > **TL;DR**: Efficient visual text compression via adaptive resolution, combining low-DPI global views with selective enhancement, achieving 2.9x input compression and 2.79x speedup while improving performance.
+* `quantization` `efficient-inference` `MLLM` [Bits Under ZK-LLM: Evaluating Zero-Knowledge-Friendly Quantization for Verifiable Private LLM Inference](http://arxiv.org/abs/2609.36437v1)
+  > **TL;DR**: Evaluates ZK-friendly quantization for private LLM inference, analyzing weight/activation precision and nonlinear lookup tables. Identifies RMSNorm as a bottleneck and shows operator-aware precision selection improves efficiency. Achieves near-baseline utility with selective precision increase.
+* `quantization` `compression` `efficient-inference` [JARQ: Joint Alternating Refinement for Quantization](http://arxiv.org/abs/2609.38599v1)
+  > **TL;DR**: Improves group-wise post-training quantization in LLMs by alternating joint scale refinement and code adjustments, maintaining bit-width. Cuts 3-bit RTN perplexity by up to 36%.
+* `quantization` `compression` `efficient-inference` [ShamAN-Q: Shampoo Augmented NanoQuant for Sub-1-bit LLM Weights](http://arxiv.org/abs/2609.38521v1)
+  > **TL;DR**: ShamAN-Q introduces sub-1-bit PTQ for LLMs using dense curvature metrics via Shampoo optimizer, achieving 0.8–1 bpw with improved perplexity (e.g., 14.29 to 13.80 on Qwen3-Base 4B) and matching/exceeding prior quantization methods.
+* `quantization` `compression` `efficient-inference` [Security-Enhanced Seed-Based Weight Quantization for Large Language Models](http://arxiv.org/abs/2609.38477v1)
+  > **TL;DR**: Non-uniform weight sensitivity-aware seed-based compression for LLMs with deterministic bit-allocation (4-bit/weight), matching SeedLM perplexity with fewer bits and reducing accuracy loss, implemented in ASIC with minimal overhead.
+* `quantization` `efficient-inference` `MLLM` [STEPQuant: When and Where Errors Matter in Delta-Rule Recurrent State Quantization](http://arxiv.org/abs/2609.38169v1)
+  > **TL;DR**: Quantizes Delta-rule recurrent states via spatial-temporal precision allocation, reducing serving memory by 68.7% at 6-bit while matching FP32 accuracy, and outperforms INT8 at 4-bit.
+* `quantization` `efficient-inference` `MLLM` [LeapQuant: Efficient Linear Attention with Accurate Recurrent State Quantization](http://arxiv.org/abs/2609.38166v1)
+  > **TL;DR**: Efficient 8-bit quantization of recurrent state in linear attention LLMs via per-window quantization with high-precision compensator tokens, achieving 1.47× end-to-end speedup with FP32 accuracy.
+* `quantization` `efficient-inference` `MLLM` [WUSH-KV: KV Cache Quantization with Data-Adaptive Transforms](http://arxiv.org/abs/2609.38121v1)
+  > **TL;DR**: KV cache quantization bottleneck addressed via data-adaptive WUSH-KV with calibrated transforms, achieving near-optimal INT2 quantizer performance (2-bit) with lowest perplexity, outperforming OSCAR transform.
+* `compression` `efficient-inference` `quantization` [Mira: Memory-Efficient MoE Inference Using Adaptive Caching and Predictive Expert Staging](http://arxiv.org/abs/2609.38090v1)
+  > **TL;DR**: Memory-efficient MoE inference via predictive expert staging and tailored quantization, achieving 5.71x speedup on GPU with optimized cache and compression.
+* `efficient-inference` `token-pruning` `MLLM` [$S^3$: Spectral Null-Space Swap Makes Reasoning Models Efficient](http://arxiv.org/abs/2609.37976v1)
+  > **TL;DR**: Proposes $S^3$ to reduce LLM token cost by operating in null-space, achieving 27.4% token reduction and +1.0% accuracy on reasoning tasks.
+* `quantization` `compression` `efficient-inference` [Behavioral Capacity Certificates for Quantized Language Models](http://arxiv.org/abs/2609.37887v1)
+  > **TL;DR**: Proposes Behavioral Capacity Certificates (BCC) for quantized language models, enabling efficient bit-width selection (mixed-precision) and weight pruning/sparsity while preserving model behavior. Achieves lower NLL and higher prediction agreement on GPT-2 and other models at equal cache memory.
+* `token-pruning` `efficient-inference` [Retrieval Capacity of Self-Attention Under Competition](http://arxiv.org/abs/2609.37879v1)
+  > **TL;DR**: Studies effective token pruning in language models via self-attention, keeping only top-attention tokens. Achieves close to full-attention NLL with small token sets, outperforming random selection.
+* `quantization` `efficient-inference` [Delta-Matching: Closing the Final Gap of Native 8-bit Training for LLMs](http://arxiv.org/abs/2609.37852v1)
+  > **TL;DR**: Enables fully native 8-bit FP8 LLM training via Delta-Matching, mitigating optimization errors in attention-core matmuls, matching BF16/FP32 performance across scales.
+* `quantization` `efficient-inference` [Scale Sensitivity in Low-Bit Post-Training Quantization: Curvature of the Quantization Error Landscape](http://arxiv.org/abs/2609.37416v1)
+  > **TL;DR**: Analyzes scale sensitivity in PTQ via Gaussian weight analysis, proving curvature decay with bit-width. Validated on GPTQ for LLMs, showing strong sensitivity at 2-3 bits and Hadamard processing matching optimal scale at ≥3 bits.
+* `compression` `efficient-inference` [vSkipper: Translating Dynamic Layer Skipping into LLM Serving Gains](http://arxiv.org/abs/2609.37062v1)
+  > **TL;DR**: Dynamic layer skipping in LLM serving reduces computation but lacks efficient integration with modern engines. vSkipper virtualizes skipping to preserve serving features, achieving 36.8% lower latency on GSM8K and 11.3% higher throughput under saturation without quality loss, using FlexiDepth's 8/32 layer skipping.
+* `token-pruning` `efficient-inference` `MLLM` [GleanVID: Complementary Token Selection for Efficient Video Large Language Models](http://arxiv.org/abs/2609.37042v1)
+  > **TL;DR**: Reduces VideoLLM inference overhead via complementary token selection, preserving 98.6% Qwen3-VL performance with 25% tokens and cutting prefill latency by 44.7%.
+* `quantization` `efficient-inference` `compression` [QuantMLA: Function-Aligned Dual-Path Quantization for Low-Bit MLA KV Caching](http://arxiv.org/abs/2609.36760v2)
+  > **TL;DR**: Proposes QuantMLA for INT4/INT2 KV cache quantization in Multi-Head Latent Attention, with path-specific error analysis and function-aligned transformations. Achieves 3.59x cache compression at 128K context with minimal accuracy drop.
+* `quantization` `efficient-inference` `MLLM` [Replay the Curvature: Accurate and Scalable NVFP4 Quantization for Large Language Model Inference](http://arxiv.org/abs/2609.36654v1)
+  > **TL;DR**: Proposes NVFP4 (4-bit) quantization for LLMs with Schur Replay scale-selection to reduce weight storage and memory traffic, achieving up to 100.84% BF16 accuracy recovery on 397B model with 15.17x speedup.
+
 ### 2026-09-28
 * `compression` `efficient-inference` `token-pruning` [ReSS: Residual-Restoring Sparse Attention for 3D Vision Transformers](http://arxiv.org/abs/2609.35593v1)
   > **TL;DR**: Problem: high computation in 3D vision transformers due to global attention. Method: residual-restoring sparse attention (ReSS) by minimizing drift in residual stream. Result: preserves dense performance better than prior methods at up to 70% sparsity.

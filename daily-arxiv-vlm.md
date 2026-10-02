@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-347-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.09.30-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-363-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.10.01-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,40 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-10-01
+* `token-pruning` `efficient-inference` [Fewer Tokens, Better Action: GPT-6 Astra Robot Agents with 14% Higher Success Rate but 65% Fewer Tokens](http://arxiv.org/abs/2610.01939v1)
+  > **TL;DR**: Reducing token overhead in VLM robot agents; feedback-driven selective observation reduces LLM calls by 49% and tokens by 65% with improved success rate (63.1% to 71.7%).
+* `token-pruning` `efficient-inference` `MLLM` [VETO: Video Efficient Token Optimization for Vision Language Models](http://arxiv.org/abs/2610.01785v1)
+  > **TL;DR**: Reduces visual token redundancy in VLMs via dual-axis compression (spatial merging + temporal redundancy pruning) with a training-optional plugin, achieving 45% faster inference and 55.7% accuracy at 10% token budget.
+* `compression` `efficient-inference` `MLLM` [MWOP: Modality-aware Width-wise Operation Pruning for Efficient MLLMs](http://arxiv.org/abs/2610.01434v1)
+  > **TL;DR**: Efficient MLLM inference via modality-aware operation pruning (V2V, T2V, T2T paths and FFN channels). Achieves 1.6x prefill speedup on LLaVA-7B with 99.7% performance retention.
+* `quantization` `efficient-inference` [Joint Branch-Space Transform Coding for Diffusion Activation Quantization with Classifier-Free Guidance](http://arxiv.org/abs/2610.00930v1)
+  > **TL;DR**: Improves diffusion model activation quantization by exploiting CFG branch correlations via branch-space transform coding (GCBT), enabling fixed-bit PTQ with statistically significant fidelity gains.
+* `token-pruning` `efficient-inference` `MLLM` [VETO: Video Efficient Token Optimization for Vision Language Models](http://arxiv.org/abs/2610.01785v1)
+  > **TL;DR**: Addresses quadratic visual token cost in VLMs via dual-axis token compression (intra-frame merging + inter-frame redundancy reduction), achieving 45% faster inference and 55.7% accuracy under 10% token budget.
+* `token-pruning` `efficient-inference` `compression` [TopK-Guided: Adaptive, Budget-Aware Activation Sparsity for Efficient LLM Inference](http://arxiv.org/abs/2610.01763v1)
+  > **TL;DR**: Efficient LLM inference via adaptive sparsity, combining token-level budget control with block-level sensitivity for improved accuracy over TEAL/WINA at high sparsity.
+* `compression` `efficient-inference` `MLLM` [MWOP: Modality-aware Width-wise Operation Pruning for Efficient MLLMs](http://arxiv.org/abs/2610.01434v1)
+  > **TL;DR**: Proposes MWOP for pruning modality-aware attention paths and FFN channels in MLLMs, achieving 1.6x prefill speedup with 99.7% performance retention on LLaVA-OneVision-7B.
+* `compression` `token-pruning` `efficient-inference` [ITC-MoE: Importance-guided Token-aware Compression for MoE Diffusion Language Models](http://arxiv.org/abs/2610.01296v1)
+  > **TL;DR**: Compresses MoE diffusion models via importance-guided token-aware low-rank factorization and routing adaptation, achieving 30% compression and 7.22x speedup while maintaining 96.33% accuracy.
+* `efficient-inference` `token-pruning` [HHR: Hierarchical Hash Retrieval for Efficient LLM Generation](http://arxiv.org/abs/2610.01230v1)
+  > **TL;DR**: Addresses efficient long-context inference in LLMs via hierarchical hash retrieval to reduce false positives/negatives, achieving up to 3.3x decoding speedup for Llama-3.1-8B at 128K context length.
+* `quantization` `efficient-inference` [The Devil Is in the Reconstruction Loss Scale: Rethinking Optimization in LLM Quantization](http://arxiv.org/abs/2610.00983v1)
+  > **TL;DR**: Analyzes optimization imbalance in LLM PTQ due to MSE loss scale, proposes RMSE variants for gradient normalization, achieving better INT4 quantization via stage-decoupled optimization.
+* `efficient-inference` `compression` [Decoding Looped Transformers Better for (Almost) Free](http://arxiv.org/abs/2610.02185v1)
+  > **TL;DR**: Improves decoding efficiency in looped Transformers via contrastive decoding (LoopCD), reducing FLOPs by 22.5-48.2% while maintaining performance.
+* `compression` `efficient-inference` [LAST: Looped Audio Spectrogram Transformer](http://arxiv.org/abs/2610.01926v1)
+  > **TL;DR**: Reduces transformer computational cost by reusing blocks to refine class token, cutting 49.4% parameters and 42% FLOPs while improving AudioSet mAP by 2.1%.
+* `quantization` `efficient-inference` [Stochastic Rounding in Low-Precision Transformer Inference: A Variable-Precision Emulation Study of a Small GPT-2](http://arxiv.org/abs/2610.01889v1)
+  > **TL;DR**: Compares stochastic vs. nearest rounding for low-precision transformer inference, finding MLPs favor stochastic rounding (1.15x perplexity at 6-bit) while heads prefer nearest, achieving 1.10x perplexity in mixed-precision.
+* `compression` `efficient-inference` [CrossGMN: Graph Metanetworks for Cross-Architecture Weight-Space Transformations](http://arxiv.org/abs/2610.01649v1)
+  > **TL;DR**: Focuses on model compression via cross-architecture weight-space transformations. Key method: CrossGMN, a graph metanetwork for equivariant weight transformations. Results: speeds up distillation by up to 8.89x and transfers across datasets without retraining (3.78x).
+* `compression` `efficient-inference` `quantization` [QK-Wanda: Coupling Queries and Keys for Unstructured Pruning](http://arxiv.org/abs/2610.01554v1)
+  > **TL;DR**: Couples query-key weights for unstructured pruning, reducing reconstruction error by 60% at 50% sparsity and 45% at 80%, while increasing zero-shot accuracy by 5.94 percentage points at 80% sparsity on Llama 2 70B.
+* `quantization` `compression` `efficient-inference` [FedFit: Federated Fine-Tuning of LLMs via Vector-Bank Parameterization and Quantization](http://arxiv.org/abs/2610.01537v1)
+  > **TL;DR**: FedFit reduces federated LLM fine-tuning communication overhead via vector-bank parameterization and quantization, achieving 100x higher compression ratios than standard federated LoRA while maintaining perplexity.
+
 ### 2026-09-29
 * `compression` `efficient-inference` [TSGL: Teacher-Student Graph Learning for 3DGS Compression](http://arxiv.org/abs/2609.38635v1)
   > **TL;DR**: Compresses 3DGS models by 27x-33x using Teacher-Student Graph Learning and Graph Fourier Transform, reducing file sizes with <0.6dB PSNR loss.

@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-363-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.10.03-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-381-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.10.04-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,44 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-10-02
+* `token-pruning` `efficient-inference` `MLLM` [From Patching to Pruning Visual Computation in Vision Language Models](http://arxiv.org/abs/2610.03389v1)
+  > **TL;DR**: Prunes visual computation in VLMs via activation patching without token removal, reduces 55% FLOPs at 3% accuracy drop (94% retained), showing non-uniform visual processing across layers.
+* `quantization` `efficient-inference` [VisionMX: Unlocking Microscaling Post-Training Quantization for Vision Models](http://arxiv.org/abs/2610.03218v1)
+  > **TL;DR**: Explores microscaling (MX) post-training quantization for vision models, identifying error sources and proposing optimizations (bounded weight rounding, foldable affine correction). Handles MX formats, achieving performance recovery in MX-sensitive architectures.
+* `quantization` `efficient-inference` `MLLM` [CHASE-VLA: Post-Training Quantization Framework for Vision-Language-Action Models with Chunk-Aware Scale Estimation](http://arxiv.org/abs/2610.02666v1)
+  > **TL;DR**: PTQ for VLA models via chunk-aware scale estimation, enabling W4A4 quantization of MLP & attention layers, restoring FP16 performance with 73.4% weight storage reduction and 70.9% memory traffic savings on π0.5.
+* `efficient-inference` `compression` `token-pruning` [SpectralCache: Accelerating Diffusion-Based World Models via Spectral Feature Caching](http://arxiv.org/abs/2610.02660v1)
+  > **TL;DR**: Reduces diffusion model inference overhead via spectral feature caching by reusing stable singular subspaces and skipping backbone evaluations, achieving 5.22x speedup on HunyuanWorld-Voyager-13B.
+* `compression` `efficient-inference` `quantization` [Preserving Mathematical Reasoning in Compressed Diffusion Language Models via Trajectory-Aware Low-Rank Approximation](http://arxiv.org/abs/2610.03326v1)
+  > **TL;DR**: Preserves mathematical reasoning in compressed diffusion LLMs via trajectory-aware low-rank approximation. Proposes Traj-MC for efficient calibration, improving reconstruction and reasoning under compression. Achieves better reasoning preservation than clean calibration on benchmarks.
+* `compression` `efficient-inference` [KV$^2$: A Self-Refining KV Cache](http://arxiv.org/abs/2610.03198v1)
+  > **TL;DR**: Compresses KV cache in long-context models by selective token reconstruction, achieving 40% better score at 2% cache budget with lower runtime and memory.
+* `quantization` `compression` `efficient-inference` [Tailoring the Quantization Space for 1-Bit KV Cache Compression](http://arxiv.org/abs/2610.03027v1)
+  > **TL;DR**: 1-bit KV cache compression via query-guided and covariance-aware vector quantization (TaSQ), enabling 14x larger batch size and 1.87x higher throughput vs. BF16 baseline.
+* `compression` `efficient-inference` `MLLM` [Dynamic Expert Pruning for Multi-Agent Systems](http://arxiv.org/abs/2610.02951v1)
+  > **TL;DR**: Dynamic expert pruning for Mixture-of-Experts models in multi-agent systems, using per-request masks from lightweight predictors, avoids static pruning inefficiencies, enabling sparser and more efficient serving without retraining, while maintaining accuracy.
+* `compression` `efficient-inference` [DyRA: Dynamic Residual Approximation for Efficient Matrix Multiplication in DNNs](http://arxiv.org/abs/2610.02882v1)
+  > **TL;DR**: Problem: High cost of dense matrix multiplication in DNNs. Method: Dynamic residual approximation (DyRA) for output-aware structured matrix approximation. Result: 1.5× GPU speedup for DINOv3 with 3× less accuracy drop vs baselines.
+* `compression` `efficient-inference` [iS-KV: Online Low-Rank KV Cache Compression via Block-Incremental SVD](http://arxiv.org/abs/2610.02815v1)
+  > **TL;DR**: Reduces KV-cache memory via online low-rank compression (block-incremental SVD), achieving 82.6% accuracy at 4.06x compression on DeepSeek-R1-Distill-Llama-8B.
+* `quantization` `efficient-inference` `MLLM` [BitNest: Bit-Nested Speculative Decoding for Memory-Efficient LLM Inference Acceleration](http://arxiv.org/abs/2610.02800v1)
+  > **TL;DR**: Memory-efficient LLM inference by embedding low-precision draft directly into higher-precision target via bit-nested speculative decoding, achieving 1.48--1.61x speedup over FP16 decoding with 95.2% acceptance rate.
+* `quantization` `efficient-inference` [16-bit Precision of Convolutional Neural Networks on Microcontroller Units for 8-bit Costs](http://arxiv.org/abs/2610.03402v1)
+  > **TL;DR**: Efficient 16-bit quantization (W16A16) for MCUs matches 8-bit costs in speed/energy while reducing quantization errors 10x, validated on Armv7E-M.
+* `token-pruning` `efficient-inference` `MLLM` [From Patching to Pruning Visual Computation in Vision Language Models](http://arxiv.org/abs/2610.03389v1)
+  > **TL;DR**: Proposes Patch-to-Prune (P2P) for efficient VLMs by bypassing unnecessary visual token computations without modifying weights or removing tokens. Maintains 94% accuracy at 3% tolerance while reducing FLOPs by 55%.
+* `compression` `efficient-inference` [Exploring the Trade-Off Between Structured Pruning and Fault Tolerance in Deep Neural Networks for Space Applications](http://arxiv.org/abs/2610.03117v1)
+  > **TL;DR**: Investigates structured pruning impact on model robustness to bit-flips for space applications; shows shorter execution time offsets increased fault sensitivity, enabling energy/latency savings.
+* `quantization` `compression` `efficient-inference` [Tailoring the Quantization Space for 1-Bit KV Cache Compression](http://arxiv.org/abs/2610.03027v1)
+  > **TL;DR**: Efficient 1-bit KV cache compression for LLMs via query-guided vector quantization (TaSQ), achieving 1.87× throughput gain and 14× batch size increase over BF16 baseline.
+* `token-pruning` `compression` `efficient-inference` [SlimKV: Joint Token-Feature KV Cache Compression with Reconstruction-Free Beacon Attention](http://arxiv.org/abs/2610.02953v1)
+  > **TL;DR**: Compresses KV-cache memory in LLMs via joint token-feature compression with beacon attention, achieving 16x/32x compression with 96% accuracy retention and up to 3.38x decoding speedup at 128K length.
+* `compression` `efficient-inference` `token-pruning` [Dynamic Expert Pruning for Multi-Agent Systems](http://arxiv.org/abs/2610.02951v1)
+  > **TL;DR**: Memory-inefficient MoE models due to resident experts. Dynamic Expert Pruning (DEP) uses prompts to generate per-request masks, reducing footprint. Achieves higher accuracy than static pruning, especially when few experts are retained.
+* `compression` `quantization` `efficient-inference` [DyRA: Dynamic Residual Approximation for Efficient Matrix Multiplication in DNNs](http://arxiv.org/abs/2610.02882v1)
+  > **TL;DR**: Efficient matrix multiplication via dynamic residual approximation and low-rank output error correction, reducing GPU inference time 1.5× for DINOv3 with 3× less accuracy drop.
+
 ### 2026-10-01
 * `token-pruning` `efficient-inference` [Fewer Tokens, Better Action: GPT-6 Astra Robot Agents with 14% Higher Success Rate but 65% Fewer Tokens](http://arxiv.org/abs/2610.01939v1)
   > **TL;DR**: Reducing token overhead in VLM robot agents; feedback-driven selective observation reduces LLM calls by 49% and tokens by 65% with improved success rate (63.1% to 71.7%).

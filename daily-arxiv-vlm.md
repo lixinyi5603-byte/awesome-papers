@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-381-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.10.04-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-419-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.10.05-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,88 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-10-05
+* `token-pruning` `efficient-inference` `compression` [Less Context, Better Geometry: Masked Geometric Encoder for Robust 3D Foundation Models](http://arxiv.org/abs/2610.06813v1)
+  > **TL;DR**: Proposes a Masked Geometric Encoder (MGE) for 3D foundation models, reducing quadratic attention complexity via token dropping and adaptive merging. Achieves inference speedup with better occlusion handling.
+* `compression` `token-pruning` `efficient-inference` [MC-Sparse: Deconstructing and Closing the Dense-Sparse Attention Gap in Diffusion Transformers](http://arxiv.org/abs/2610.06801v1)
+  > **TL;DR**: Reduces diffusion transformer latency via sparse attention with token grouping and KV selection, achieving 1.8-2.32x speedups in video/3D generation without quality loss.
+* `token-pruning` `efficient-inference` [Video Encoders Built on Image Representations](http://arxiv.org/abs/2610.06616v1)
+  > **TL;DR**: Proposes a compact video encoder by selecting relevant visual tokens (28%-35% of full tokens) across frames, achieving 62.75 benchmark score with 1,535 tokens and 2.16x speedup on Qwen3-VL-8B.
+* `quantization` `efficient-inference` `MLLM` [CentriQ: Calibration-Free Quantization of Diffusion Transformers via Exact Mean Centering](http://arxiv.org/abs/2610.06260v1)
+  > **TL;DR**: Quantizes diffusion transformers to 4-bit weights and activations via exact mean centering, avoiding calibration; matches SVDQuant at 4-bit and achieves usable quality at 2-bit.
+* `token-pruning` `efficient-inference` [Level-of-Token Diffusion](http://arxiv.org/abs/2610.05816v1)
+  > **TL;DR**: Efficient diffusion models via adaptive token allocation (LoT layout) for reduced computation, using multiresolution tokens for detail-aware processing, achieving speedups with quality-efficiency tradeoffs based on token budget.
+* `quantization` `compression` `efficient-inference` [Paradee: Distilling Kokoro-82M into an 8M-Parameter Single-Voice Text-to-Speech Model](http://arxiv.org/abs/2610.06817v1)
+  > **TL;DR**: Distills 82M TTS model into 8M params via layer narrowing & separate training, quantized to INT8, achieving 8.5MB size, 25x real-time CPU inference, with UTMOS score 4.41 (vs teacher 4.52).
+* `token-pruning` `efficient-inference` [MC-Sparse: Deconstructing and Closing the Dense-Sparse Attention Gap in Diffusion Transformers](http://arxiv.org/abs/2610.06801v1)
+  > **TL;DR**: Proposes Meta-Cached Sparse Attention (MC-Sparse) to reduce diffusion transformer latency by selecting key-value tokens & query grouping, achieving 1.8-2.32x speedup with negligible quality loss.
+* `quantization` `efficient-inference` `token-pruning` [Quantifying the Stability of Multi-Step Reasoning via Error Amplification](http://arxiv.org/abs/2610.06404v1)
+  > **TL;DR**: Analyzes stability of multi-step reasoning via Jacobian norms, proposes chain-of-thought length compression and quantization-aware training. Achieves 8.2% improvement for long inputs and 3-8x stability reduction via Jacobian regularization.
+* `quantization` `efficient-inference` `compression` [CentriQ: Calibration-Free Quantization of Diffusion Transformers via Exact Mean Centering](http://arxiv.org/abs/2610.06260v1)
+  > **TL;DR**: Proposes CentriQ for 4/2-bit weight-activation quantization of diffusion transformers via exact mean centering and closed-form per-token scaling without calibration; matches calibrated SVDQuant at 4 bits and retains usable quality at 2-bit activations.
+* `quantization` `compression` `efficient-inference` [Differentiable Bit-Widths: Co-optimizing Pruning and Quantization via SVD for Ultra-Efficient LLM Compression](http://arxiv.org/abs/2610.06026v1)
+  > **TL;DR**: Co-optimizes pruning and quantization via differentiable bit-width learning for LLMs, achieving 1.61-bit ultra-efficient compression with superior performance to decoupled methods.
+* `token-pruning` `efficient-inference` [Level-of-Token Diffusion](http://arxiv.org/abs/2610.05816v1)
+  > **TL;DR**: Introduces Level-of-Token Diffusion (LoT) for efficient diffusion models, using adaptive multi-resolution tokens to reduce computation where less detail is needed, achieving significant speedups depending on token budget.
+* `compression` `quantization` `efficient-inference` [Paradee: Distilling Kokoro-82M into an 8M-Parameter Single-Voice Text-to-Speech Model](http://arxiv.org/abs/2610.06817v1)
+  > **TL;DR**: Distills an 82M TTS model into an 8M-param model, quantized to INT8 (8.5MB), achieving 25x real-time speed on CPU with minimal quality drop (UTMOS 4.41 vs 4.52).
+* `compression` `quantization` `efficient-inference` [Co-Optimizing Graph Sparsification and Approximate Computing for Energy-Efficient FPGA-Based GCN Inference](http://arxiv.org/abs/2610.06138v1)
+  > **TL;DR**: Co-optimizes graph sparsification and 8-bit quantization for GCNs on FPGAs, achieving 9.88× speedup with 86.6% accuracy on Amazon Photo at <1W power.
+* `quantization` `compression` `efficient-inference` [StagQ: Constraint-Driven Multi-Precision Weight Quantization for LLMs](http://arxiv.org/abs/2610.05977v1)
+  > **TL;DR**: Multi-precision weight quantization for LLMs with 2-bit group-wise base + 1-bit refinements, achieving 2-4 bit precision and 3.1-7.0 MMLU points improvement on Llama-3.1-8B.
+* `quantization` `efficient-inference` `MLLM` [Beyond In-Distribution Preservation: Recovering Generalization in Quantized VLAs via Vulnerability-Oriented Tuning](http://arxiv.org/abs/2610.05745v1)
+  > **TL;DR**: Addresses robustness loss in quantized Vision-Language-Action models via selective vulnerability-aware tuning (PIVOT-Q), achieving recovery with 7.4% of full distillation budget.
+
+### 2026-10-04
+* `token-pruning` `efficient-inference` [Prism: Dynamic Sparse Attention for Native 2K Joint Video-Audio Generation Model Training](http://arxiv.org/abs/2610.05416v1)
+  > **TL;DR**: Proposes Prism, a dynamic sparse attention method for joint video-audio generation training, reducing redundant tokens via spatiotemporal macro-zones and hybrid block selection, achieving 2.5× training speedup over full attention.
+* `compression` `efficient-inference` [Mobile-4DGS: Unified Static-Dynamic Real-time Mobile Gaussian Splatting](http://arxiv.org/abs/2610.05289v1)
+  > **TL;DR**: Mobile-4DGS reduces storage and computational overhead for real-time 3D Gaussian Splatting on mobile devices via Monte Carlo Specular Energy Aggregator for compact appearance and Multi-View Alpha-Based Densification for primitive pruning, achieving efficient inference.
+* `token-pruning` `efficient-inference` `MLLM` [When and What to Prune? Stage-Aware Visual Token Pruning for Efficient VLA](http://arxiv.org/abs/2610.05273v1)
+  > **TL;DR**: Stage-aware visual token pruning for VLA models, using adaptive layer selection and dual-path pruning to remove 87.5% of tokens while maintaining task success, achieving 1.718x speedup.
+* `compression` `efficient-inference` [TIRMamba: A Thermal-Prior-Modulated State-Space Network for Sub-Million-Parameter Infrared Image Super-Resolution](http://arxiv.org/abs/2610.05182v1)
+  > **TL;DR**: Efficient infrared super-resolution with sub-million parameter network, achieving 29-40x fewer parameters and 2.8-9.4x lower latency compared to state-of-the-art.
+* `compression` `token-pruning` `efficient-inference` [LightVLN: Efficient Aerial Vision-and-Language Navigation with Compact Memory and History-Guided Local Aggregation](http://arxiv.org/abs/2610.05024v1)
+  > **TL;DR**: Efficient aerial VLN by compressing history to 1 token per frame and reducing current observation from 256 to 32 tokens, achieving 14.61Hz inference with a 0.5B backbone.
+* `compression` `efficient-inference` [Task-Aware Joint Pruning and Distillation for Efficient Audio Deepfake Detection](http://arxiv.org/abs/2610.05264v1)
+  > **TL;DR**: Compresses SSL-based audio deepfake detectors via joint pruning & distillation, reducing model to 31.9M params (6.3x FLOPs reduction) with only 1.30% performance drop.
+* `compression` `efficient-inference` [LiFT: Loop Flow Transformers](http://arxiv.org/abs/2610.05538v1)
+  > **TL;DR**: Reduces computation in generative models by looping a shared Diffusion Transformer core, achieving 52% fewer inference FLOPs and 60% fewer parameters than baseline while improving FID by 3.34.
+* `token-pruning` `quantization` `efficient-inference` [Underscoring the Problem: Why Softpick Fails at Initialization](http://arxiv.org/abs/2610.05488v1)
+  > **TL;DR**: Addresses high activation dynamic range in low-precision inference via Softpick's rectified attention, separating denominator terms. Enables training from scratch (230M params) with fewer dead heads and reliable passkey retrieval.
+* `quantization` `efficient-inference` `MLLM` [Understanding the Weight Averaging Mechanism in LLM Training for Post-Training Quantization](http://arxiv.org/abs/2610.05329v1)
+  > **TL;DR**: Analyzes weight averaging in LLM pretraining to improve post-training quantization robustness, demonstrating better stability for coarser quantization (e.g., INT8). Achieves Pareto-optimal trade-off between accuracy and quantization robustness.
+* `efficient-inference` `quantization` `MLLM` [Robust Parameter-Efficient LLM Adaptation on Analog Hardware](http://arxiv.org/abs/2610.05318v1)
+  > **TL;DR**: Efficient LLM adaptation for analog hardware using LoRA with input reshaping and update accumulation. Reduces MVM errors and preserves updates with only 20 conductance states. Improves fine-tuning under noise and finite-resolution programming.
+* `quantization` `efficient-inference` `compression` [Loopy: Low-Bit Quantization Framework for Looped Language Models](http://arxiv.org/abs/2610.05265v1)
+  > **TL;DR**: PTQ framework for looped LMs using depth-aware quantization of shared recurrent core via channel scaling & orthogonal rotations at target deployment depth. W4A4 reduces perplexity by 36.5% vs SpinQuant on Ouro-1.4B.
+
+### 2026-10-03
+* `compression` `token-pruning` `efficient-inference` [Investigating Spatiotemporal Redundancy in Video Transformer for Collision Anticipation](http://arxiv.org/abs/2610.04727v1)
+  > **TL;DR**: Reduces video transformer computation via temporal token merging (50% FLOPs reduction to 178.5 GFLOPs) and MLP pruning, achieving 1.76x speedup with minimal mAP drop (0.7478 to 0.7443).
+* `token-pruning` `efficient-inference` `MLLM` [FLASHSWIN: Unlocking Large Windows and Dense Tokens in Swin Vision Transformers with Memory Efficient Attention](http://arxiv.org/abs/2610.04664v1)
+  > **TL;DR**: Improves attention efficiency in Swin ViTs via FlashAttention, reducing per-window memory from O(M^4) to O(M^2), enabling larger windows (M=32) and dense tokens (p=2) with 12.4GB memory, achieving +1.3% ImageNet accuracy over SwinV2-T.
+* `quantization` `efficient-inference` `compression` [RPFQ-ViT: Rotated Phase-Frame Quantization for Extremely Low-Bit Weights in Vision Transformers](http://arxiv.org/abs/2610.04457v1)
+  > **TL;DR**: RPFQ-ViT proposes rotated phase-frame quantization for extremely low-bit ViTs, achieving 79.33% Top-1 on ImageNet with W2/A4, reducing model size by 5.4-7.1× and latency by 1.4-1.6×.
+* `token-pruning` `efficient-inference` `MLLM` [Rethinking Long-Video Efficiency: A Joint Allocation Perspective on Frames, Pixels, and Front-End Latency](http://arxiv.org/abs/2610.04318v1)
+  > **TL;DR**: Efficient long-video understanding by trading per-frame resolution for denser temporal coverage, combining dense low-res and sparse high-res frames (LoHi), reducing front-end latency by 7x and improving accuracy by 10.6pp at matched token budget.
+* `token-pruning` `efficient-inference` `MLLM` [FlashGaze: Training-Free Multi-Scale Patch Pruning For Efficient Video Understanding](http://arxiv.org/abs/2610.04225v1)
+  > **TL;DR**: Training-free visual token pruning for efficient video understanding in MLLMs via pixel-space spatiotemporal redundancy reduction, achieving 5.4x ViT speedup and 17x prefill speedup with 98% accuracy retention.
+* `compression` `efficient-inference` `MLLM` [More Value per Key: Asymmetric Sparse Attention for Faster LLM Decoding](http://arxiv.org/abs/2610.04753v1)
+  > **TL;DR**: Reduces LLM decoding cost by asymmetric sparse attention (SAGA), decoupling key/value heads with top-N sparsity. Achieves 2x speedup over full-attention GQA baseline at long contexts with 1.5B params.
+* `token-pruning` `efficient-inference` [LatentIndex: Cross-Layer Sharing with Layer-Specific Selection for Sparse Attention](http://arxiv.org/abs/2610.04635v1)
+  > **TL;DR**: Efficient sparse attention via cross-layer index sharing with layer-specific selection. LatentIndex shares latent caches, reducing indexer-cache storage by 61.1% and achieving 2.30-2.72x decode speedups over DSA.
+* `compression` `efficient-inference` `MLLM` [InferOpt: Constrained Multi-Objective Search for LLM Inference Configurations](http://arxiv.org/abs/2610.04473v1)
+  > **TL;DR**: Efficient LLM inference via constrained multi-objective search for layer-wise configurations. InferOpt optimizes KV cache (reducing by 64.4%) and MoE expert routing (43.0% fewer token-expert pairs) while maintaining performance.
+* `efficient-inference` `compression` [MOIRA: Mass-Oriented Indexing with Ragged Attention for Long-Context Decoding](http://arxiv.org/abs/2610.04313v1)
+  > **TL;DR**: Reduces KV cache memory bandwidth in long-context decoding via adaptive sparse attention (coverage rule γ=0.99, 70% page reduction), cutting time per token by 2.2-2.5× vs dense.
+* `compression` `efficient-inference` [FTD-GNO: Memory-Efficient Graph Neural Operators through Functional Tensor Decomposition of the Kernel](http://arxiv.org/abs/2610.04212v1)
+  > **TL;DR**: Reduces memory overhead in Graph Neural Operators via functional tensor decomposition, achieving lower peak memory and shorter training times without full kernel materialization.
+* `quantization` `compression` `efficient-inference` [BARQ: Balanced Codebook Refinement for Low-Bit LLM Quantization](http://arxiv.org/abs/2610.04490v1)
+  > **TL;DR**: Improves LLM weight quantization via balanced fitting of codebooks using entropically regularized optimal transport. BARQ achieves lower perplexity and higher accuracy at comparable low-bit budgets vs. baselines.
+* `quantization` `efficient-inference` [Saying, Not Knowing: Aggressively GGUF-Quantized Small Language Models Still Write Rare Words They Can No Longer Define](http://arxiv.org/abs/2610.04403v1)
+  > **TL;DR**: Assesses rare word semantics loss in aggressively GGUF-quantized SLMs (down to ~2.6b Q2_K), finding sub-2B models lose 20-67% definition accuracy versus 3B+ robustness; Q4_K_M stays clean at >=1B params. Exposes semantic dissociation risks in ultra-low-bit deployment.
+
 ### 2026-10-02
 * `token-pruning` `efficient-inference` `MLLM` [From Patching to Pruning Visual Computation in Vision Language Models](http://arxiv.org/abs/2610.03389v1)
   > **TL;DR**: Prunes visual computation in VLMs via activation patching without token removal, reduces 55% FLOPs at 3% accuracy drop (94% retained), showing non-uniform visual processing across layers.

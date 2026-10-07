@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-419-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.10.05-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-448-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.10.06-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,66 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-10-06
+* `efficient-inference` `token-pruning` [Backend-Agnostic Sparse Attention for Fast High-Resolution Visual Generation](http://arxiv.org/abs/2610.08772v1)
+  > **TL;DR**: Reduces quadratic attention cost in Diffusion Transformers via backend-agnostic sparse attention, eliminating artifacts while achieving 4.52x speedup in attention computation.
+* `quantization` `efficient-inference` [Test-Time Adaptation of Quantized ViTs via Single-Pass Quantizer-Aligned Recalibration](http://arxiv.org/abs/2610.08358v1)
+  > **TL;DR**: Proposes QuAR, a test-time adaptation method for quantized ViTs without backprop or parameter updates, aligning activation ranges to mitigate distribution shift. Works at 3-8 bits, improving ImageNet-C accuracy by 2.28-4.00 points with 46% lower latency.
+* `token-pruning` `efficient-inference` `MLLM` [DIPrune: Task-Aware Token Pruning with Dual Importance for Efficient Multimodal Language Models](http://arxiv.org/abs/2610.08341v1)
+  > **TL;DR**: Task-aware token pruning for MLLMs using dual importance scoring (intra-layer saliency & inter-layer gradient dynamics) to cut computational cost while minimizing semantic loss. Achieves SOTA on LLaVA/Qwen-VL.
+* `token-pruning` `efficient-inference` `MLLM` [VLA-ACL: Action-Consistent Visual Token Pruning for Efficient Vision-Language-Action Models](http://arxiv.org/abs/2610.08133v1)
+  > **TL;DR**: Action-Consistent Learning prunes 87.5% of visual tokens in VLAs via action-level supervision, boosting speed 1.5x without model updates.
+* `compression` `efficient-inference` [Two Halves are More than One: Phase-wise Velocity Distillation for Fast and High-Quality Image Generation](http://arxiv.org/abs/2610.08070v1)
+  > **TL;DR**: Reduces diffusion model inference cost by partitioning generation into coarse and fine phases with half-sized experts, cutting parameters by ~50% and VRAM by ~47%, while achieving FID 1.48 on ImageNet 256x256.
+* `token-pruning` `efficient-inference` `MLLM` [VisionWeave: Weaving Elastic Visual Representations as a Native Capability of MLLMs](http://arxiv.org/abs/2610.07987v1)
+  > **TL;DR**: Enables elastic visual representation in MLLMs via gated spatial pooling and granularity routing, saving 43% tokens while retaining 98.9% performance, boosting throughput 2.3x with 54.4% lower TTFT.
+* `token-pruning` `efficient-inference` `MLLM` [Decide Before You Look: Learning Which Retrieved Memories Deserve Pixels](http://arxiv.org/abs/2610.07984v1)
+  > **TL;DR**: Predicts which retrieved images need full-resolution pixels for QA using thumbnails, pruning 77-89% visual tokens (11-23% usage) with no accuracy drop, enabling 2.9x faster inference vs full processing.
+* `token-pruning` `efficient-inference` [Later Is Better: Token Reduction for ViTs Under Distribution Shift](http://arxiv.org/abs/2610.07758v1)
+  > **TL;DR**: Improves out-of-distribution accuracy for token-reduced ViTs via a late-concentrated power-law schedule. Retains 26% compute (+1.17pp accuracy) on ImageNet-C with DeiT-S, outperforming flat schedules. Works across multiple pruning methods and domains.
+* `token-pruning` `compression` `MLLM` [Foveated Compression: Selective High-Resolution Preservation for Token-Efficient VLMs](http://arxiv.org/abs/2610.07729v1)
+  > **TL;DR**: Proposes Foveated Compression for VLMs, selectively preserving high-resolution tokens at 11.11-20.99% of visual tokens, with learned selection outperforming random allocation (69.61 macro accuracy) but below oracle (82.73).
+* `compression` `efficient-inference` [MemFLoRA: Memory-Floor LoRA for CNN Adaptation at the Edge](http://arxiv.org/abs/2610.08669v1)
+  > **TL;DR**: Reduces CNN adaptation memory via Memory-Floor LoRA, freezing down-projection and minimizing activation state, cutting saved-activation by 98.5-98.7% and peak training memory by 94.9-97.3% compared to full fine-tuning.
+* `compression` `efficient-inference` [Micro Neural Policies for Safe Real-Time Robotic Control](http://arxiv.org/abs/2610.08541v1)
+  > **TL;DR**: Compresses neural policies for robotic control via ES and SMC, reducing memory to 0.5-7.5 kB while maintaining real-time performance (<25 ns jitter).
+* `quantization` `efficient-inference` `compression` [Test-Time Adaptation of Quantized ViTs via Single-Pass Quantizer-Aligned Recalibration](http://arxiv.org/abs/2610.08358v1)
+  > **TL;DR**: Test-time adaptation for quantized ViTs via Quantizer-Aligned Recalibration (QuAR), a backprop-free method recalibrating activations for 3-8 bit weights/activations, improving ImageNet-C accuracy by 2.28 points at 8 bits with 46% lower latency.
+* `quantization` `efficient-inference` `MLLM` [OSFP4: Joint Optimization of Diagonal Smoothing and Block Scales for NVFP4 Quantization](http://arxiv.org/abs/2610.08231v1)
+  > **TL;DR**: Optimizes NVFP4 quantization for LLMs via joint diagonal smoothing & block scale optimization, preserving 94-97% throughput while minimizing quantization error.
+* `compression` `efficient-inference` `token-pruning` [Compact Robot Policies Need Fine-Grained Visual Representations](http://arxiv.org/abs/2610.08183v1)
+  > **TL;DR**: Compact robot policy (48.9M params) uses pretrained, compressed representations and token pruning (48 tokens vs all patches) to match larger systems (40.9-163.6x), achieving 97.0% on LIBERO with 19.8% drop if encoder is frozen.
+* `token-pruning` `efficient-inference` `MLLM` [VisionWeave: Weaving Elastic Visual Representations as a Native Capability of MLLMs](http://arxiv.org/abs/2610.07987v1)
+  > **TL;DR**: Adaptive visual token compression for MLLMs via gated spatial pooling and granularity routing, saving 43% tokens while retaining 98.9% performance, achieving 2.3x throughput gain.
+* `token-pruning` `efficient-inference` `MLLM` [Decide Before You Look: Learning Which Retrieved Memories Deserve Pixels](http://arxiv.org/abs/2610.07984v1)
+  > **TL;DR**: Problem: reduce unnecessary visual token processing in multimodal QA. Method: PixelTriage predicts useful images before full processing. Efficiency: 11-23% visual tokens used. Result: 2.9x faster inference on DMV with no accuracy drop.
+* `efficient-inference` `compression` [Hybrid Latent Attention for Looped Language Models](http://arxiv.org/abs/2610.07940v1)
+  > **TL;DR**: Reduces KV cache size in looped language models by compressing old tokens to latents, shrinking cache 10.7x per token, improving throughput 2.5-7.4x, and retaining 97% accuracy. (Ouro looped models, 1.4B and 2.6B parameters)
+* `token-pruning` `efficient-inference` [ReFold: Training-Free Reversible Inter-Turn Context Folding for Long-Horizon Agents](http://arxiv.org/abs/2610.07863v1)
+  > **TL;DR**: Reduces long-horizon agent token consumption via reversible inter-turn context folding, cutting tokens by 2.5x and KV-cache memory by 50% without degrading task success.
+* `token-pruning` `efficient-inference` [Later Is Better: Token Reduction for ViTs Under Distribution Shift](http://arxiv.org/abs/2610.07758v1)
+  > **TL;DR**: Token reduction for ViTs under distribution shift via late-concentrated power-law schedule, maintaining accuracy at 26% compute reduction (+1.17pp on ImageNet-C with DeiT-S).
+* `compression` `efficient-inference` [VALSE: Vertical Adaptive Layer Skipping for Efficient Inference in Large Language Models](http://arxiv.org/abs/2610.07606v1)
+  > **TL;DR**: Efficient inference in LLMs via adaptive layer skipping, reducing FLOPs by selectively activating only necessary layers based on input difficulty, with theoretical guarantees on function space approximation and FLOPs savings.
+* `compression` `efficient-inference` [MemFLoRA: Memory-Floor LoRA for CNN Adaptation at the Edge](http://arxiv.org/abs/2610.08669v1)
+  > **TL;DR**: Memory-Floor LoRA (MemFLoRA) reduces activation-memory during CNN adaptation by freezing down-projection and training scale-matched up-projection, achieving 98.5-98.7% reduction in saved-activation memory.
+* `quantization` `compression` `efficient-inference` [SSR: Sparse Segment Reduction for Ternary GEMM Acceleration](http://arxiv.org/abs/2610.08403v1)
+  > **TL;DR**: Proposes SSR for ternary (INT2) LLM acceleration via optimized sparsity structures, achieving 2.1-11.3x GEMM speedup over RSR++ and 3.5-6.3x end-to-end speedup on Llama-3 1B with 45-95% sparsity.
+* `token-pruning` `efficient-inference` `MLLM` [DIPrune: Task-Aware Token Pruning with Dual Importance for Efficient Multimodal Language Models](http://arxiv.org/abs/2610.08341v1)
+  > **TL;DR**: Task-aware token pruning for MLLMs using dual importance scoring, achieves SOTA results on LLaVA and Qwen-VL by minimizing task loss distortion.
+* `compression` `token-pruning` `efficient-inference` [Compact Robot Policies Need Fine-Grained Visual Representations](http://arxiv.org/abs/2610.08183v1)
+  > **TL;DR**: Efficient robot policy by compressing visual representations using 48 tokens per view (token pruning) and pretraining, matching performance of larger models with 48.9M params, achieving 97.0% on LIBERO.
+* `quantization` `compression` `efficient-inference` [Align, Then Correct: Training-Free Two-Stage Low-Rank Compensation for Extremely Quantized Large Language Models](http://arxiv.org/abs/2610.08164v1)
+  > **TL;DR**: Proposes a training-free low-rank compensation method for extreme-weight-quantized LLMs (2-bit). It uses a two-stage closed-form adaptation (asymmetric alignment + natural-gradient step) to recover accuracy, e.g., reducing WikiText-2 perplexity from 12.43 to 10.26 on Qwen3-8B under QuIP#.
+* `quantization` `efficient-inference` [ApexQuant: Data-Free Elastic Quantization by Residual Re-Isotropization](http://arxiv.org/abs/2610.07904v1)
+  > **TL;DR**: Data-free elastic quantization by residual re-quantization, achieving near full-precision accuracy at 4 bits and best 2-bit results without calibration, via recursive error re-isotropization.
+* `compression` `efficient-inference` `token-pruning` [ReFold: Training-Free Reversible Inter-Turn Context Folding for Long-Horizon Agents](http://arxiv.org/abs/2610.07863v1)
+  > **TL;DR**: Reduces token consumption in long-horizon LLM agents by training-free reversible context folding, achieving 2.5x token reduction and 1.7x faster inference.
+* `quantization` `efficient-inference` [Lost in the bf16 Cast: Exporting Ternary Language Models Can Revert Most Low-Learning-Rate Code Changes](http://arxiv.org/abs/2610.07853v1)
+  > **TL;DR**: Audits ternary model export pipelines revealing bf16 casting issues causing accuracy drops; proposes two remedies to preserve accuracy (Falcon-E-1B-Base GSM8K accuracy recovers from 0.78% to ~58.79%).
+* `quantization` `efficient-inference` `MLLM` [TRACE: Rollout-Guided Quantization-Aware Training for FP4 Reinforcement Learning of MoE Language Models](http://arxiv.org/abs/2610.07767v1)
+  > **TL;DR**: Efficient FP4 RL quantization for MoE LLMs via rollout-guided QAT, reducing train-rollout discrepancy, achieving joint FP4 weight/activation + KV-cache with 5.4x rollout speedup vs. BF16.
+
 ### 2026-10-05
 * `token-pruning` `efficient-inference` `compression` [Less Context, Better Geometry: Masked Geometric Encoder for Robust 3D Foundation Models](http://arxiv.org/abs/2610.06813v1)
   > **TL;DR**: Proposes a Masked Geometric Encoder (MGE) for 3D foundation models, reducing quadratic attention complexity via token dropping and adaptive merging. Achieves inference speedup with better occlusion handling.

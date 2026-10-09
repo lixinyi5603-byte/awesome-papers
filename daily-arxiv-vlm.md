@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-476-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.10.07-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-508-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.10.08-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,72 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-10-08
+* `token-pruning` `efficient-inference` `compression` [BudgetPix: Compute-Adaptive Tokenization for Pixel-Space Image Diffusion](http://arxiv.org/abs/2610.12307v1)
+  > **TL;DR**: Adaptive tokenization for pixel-space diffusion, dynamically allocates compute based on visual complexity, enabling 25-40% compute reduction with minimal quality degradation (0.8 FID increase at 60% compute).
+* `token-pruning` `efficient-inference` `MLLM` [DVD: Dynamic Vector Decoding for Efficient MLLM-based Perception](http://arxiv.org/abs/2610.12266v1)
+  > **TL;DR**: Reduces token overhead in MLLM-based perception tasks by dynamic vector decoding, achieving lower latency while maintaining accuracy for 2D/3D tasks.
+* `quantization` `efficient-inference` [AI-Based On-Board Maritime Object Detection for Earth Observation Payload Data Reduction on Versal Embedded Hardware](http://arxiv.org/abs/2610.12182v1)
+  > **TL;DR**: Onboard vessel detection with YOLOX-S quantized for Versal VC1902 DPU, achieving few sec/scene processing, enabling data reduction (29% volume for 98% vessel retention) via selective downlinking.
+* `token-pruning` `efficient-inference` `MLLM` [Look Back, Think Ahead: Visual Memory on Demand for Efficient Multimodal Reasoning](http://arxiv.org/abs/2610.12060v1)
+  > **TL;DR**: Efficient multimodal reasoning by dynamically selecting and retaining visual tokens, reducing token count by 80% with 39% improvement over baselines.
+* `compression` `token-pruning` `efficient-inference` [SV-TAD: Native Sparse Convs for Efficient Temporal Action Detection](http://arxiv.org/abs/2610.11579v1)
+  > **TL;DR**: Efficient temporal action detection via native sparse 2D convolutions for dynamically pruned tokens, reducing computation by 64% and achieving 2.2x faster inference while maintaining accuracy.
+* `token-pruning` `efficient-inference` [WAM-Cache: Staleness-Bounded KV Reuse for Efficient World Action Models](http://arxiv.org/abs/2610.11401v1)
+  > **TL;DR**: Reduces KV recomputation FLOPs by 32-42% in video DiT via sparse token refresh based on action expert attention and visual surprise, maintaining policy accuracy within 0.7-1.8pp of dense baseline.
+* `compression` `efficient-inference` `MLLM` [FastJEV: Understanding Redundancy for Compact JEV Inference](http://arxiv.org/abs/2610.11379v1)
+  > **TL;DR**: Reduces JEV model redundancy via history reuse, candidate prefix sharing, and decision-guided pruning, cutting candidate depth by ~45% while retaining 93-97% task accuracy.
+* `quantization` `compression` `efficient-inference` [Deflating the Hessian: Rank-4 W4A4 Quantization for Multimodal Diffusion Transformers](http://arxiv.org/abs/2610.11315v1)
+  > **TL;DR**: Addresses W4A4 PTQ loss in diffusion transformers via low-rank decomposition and joint optimization, achieving 68.17% MMLU accuracy on Qwen3-8B with rank-4 and 4-bit quantization, 6.25× faster quantization.
+* `compression` `efficient-inference` `token-pruning` [iCATS: Fast Video Generation via Interaction-Aware Sparse Attention and Timestep-Adaptive Sparsity](http://arxiv.org/abs/2610.11302v1)
+  > **TL;DR**: Optimizes video generation with sparse attention via query-key interaction clustering and SNR-guided dynamic sparsity, achieving 2.03x speedup with 31.017 dB PSNR.
+* `token-pruning` `efficient-inference` `MLLM` [V-CoLA: Vision Token Compression with Linear Attention](http://arxiv.org/abs/2610.11251v1)
+  > **TL;DR**: Compresses vision tokens for VLMs with linear attention via training-free uniqueness-aware importance and adaptive merging, reducing tokens by 50% (99.5% perf) and up to 87.5% (88% perf), with 1.86×-6.15× prefill speedup.
+* `compression` `efficient-inference` [LadderEdit: Edit-Level Residual Compression for Memory-Efficient Lifelong Editing of LLMs](http://arxiv.org/abs/2610.11160v1)
+  > **TL;DR**: Compresses LoRA adapters for memory-efficient LLM editing via rank reduction (5.2x memory savings) while maintaining edit quality, tested on 50,000 sequential edits.
+* `token-pruning` `efficient-inference` `MLLM` [DVD: Dynamic Vector Decoding for Efficient MLLM-based Perception](http://arxiv.org/abs/2610.12266v1)
+  > **TL;DR**: Reduces excessive token overhead in MLLM-based 2D/3D perception via dynamic vector decoding, transforming representations into compact tokens. Claims significant reduction in token overhead and latency.
+* `quantization` `efficient-inference` `compression` [DEX: Digit-Level Early Exit for Energy-Efficient MSDF Neural Network Inference](http://arxiv.org/abs/2610.11748v1)
+  > **TL;DR**: Enables energy-efficient INT8 U-Net inference via MSDF arithmetic with early exit, digit skipping, and pruning, reducing computation by 38.38% while maintaining 80.58% Dice score.
+* `token-pruning` `efficient-inference` [DIAL-OPD: Learning More from Fewer Tokens in On-Policy Distillation](http://arxiv.org/abs/2610.11659v1)
+  > **TL;DR**: Proposes DIAL-OPD for token selection in on-policy distillation, retaining only 40% of tokens while improving accuracy by 5.25 percentage points.
+* `efficient-inference` `token-pruning` `compression` [DynaTE: Accelerating Diffusion LLMs via Dynamic Token Execution](http://arxiv.org/abs/2610.11284v1)
+  > **TL;DR**: Improves dLLM efficiency via dynamic token execution, skipping low-utility tokens and refining dependent tokens, achieving 2.78x speedup over state-of-the-art accelerators.
+* `quantization` `efficient-inference` `MLLM` [When Lower Reconstruction Loss Hurts: Distributionally Robust Refinement for Low-Bit LLM Quantization](http://arxiv.org/abs/2610.11226v1)
+  > **TL;DR**: Reveals limitations of reconstruction loss in weight-only PTQ for LLMs, proposing DRQ to refine quantized weights via worst-case loss minimization without changing quantization parameters. Improves AWQ/GPTQ/ParoQuant methods, tested on dense/MoE LLMs.
+* `quantization` `compression` `efficient-inference` [Rounding in Preconditioner Space: Redesigning 4-bit AdamW Optimizer-State Quantization](http://arxiv.org/abs/2610.12444v1)
+  > **TL;DR**: Redesigned 4-bit AdamW optimizer-state quantization addressing error propagation via preconditioner-space rounding methods ZIP-SR and ZE-EDEN, using NF4 for first moment. Achieved 70% reduction in validation-loss gap vs 32-bit AdamW at 2.7B params.
+* `compression` `quantization` `efficient-inference` [VFold: Symmetry-Aware Cross-Layer Value Cache Compression](http://arxiv.org/abs/2610.12338v1)
+  > **TL;DR**: Reduces KV cache memory in LLMs via symmetry-aware value cache merging, combining with quantization or key pruning for high compression ratios, without architectural changes or performance loss.
+* `compression` `efficient-inference` `MLLM` [SparseDecoding: Decoding-Aware Pruning for Accurate and Efficient LLM Inference](http://arxiv.org/abs/2610.12327v1)
+  > **TL;DR**: Prunes LLMs for fast decoding by using activations from autoregressive generation (vs fixed text), achieves 1.48x speedup on A100 via optimized N:M SpMV kernels.
+* `compression` `efficient-inference` [DADP: Dynamic Activity-Dependent Pruning, A Reverse Hebbian-Inspired Structural Pruning Method](http://arxiv.org/abs/2610.11853v1)
+  > **TL;DR**: Proposes DADP, a dynamic pruning method using activity-dependent importance scoring for structural sparsity, achieving 73.67% accuracy at 99% sparsity on ResNet-18.
+* `compression` `efficient-inference` [Compile the Table: Query-Calibrated Operator Compression for Tabular In-Context Learning](http://arxiv.org/abs/2610.11784v1)
+  > **TL;DR**: Compresses tabular in-context learning KV caches by clustering into prototypes for shared memory reuse. Achieves 10.5x compression (512 slots from 8K examples) with 0.23% accuracy drop, 508x faster than baselines.
+* `quantization` `efficient-inference` `compression` [DEX: Digit-Level Early Exit for Energy-Efficient MSDF Neural Network Inference](http://arxiv.org/abs/2610.11748v1)
+  > **TL;DR**: Proposes MSDF accelerator with INT8 quantization and digit-level early exit mechanisms (ReLU pruning, sign-only decisions) for U-Net brain-tumor segmentation, reducing digit cycles by 38.38% with 80.58% Dice score (vs 81.20% FP). Achieves 0.726mJ per 192x192 patch at 500MHz in 45nm.
+* `compression` `quantization` `efficient-inference` [Spectral Weight Decay: Inducing Low-Rank Structure in Neural Network Weights](http://arxiv.org/abs/2610.11730v1)
+  > **TL;DR**: Proposes spectral weight decay to induce low-rank structure in weights, improving compression (1.89×) and GPU inference speed (1.18×) for LLaMA models under 4% distortion budget.
+* `token-pruning` `efficient-inference` [WAM-Cache: Staleness-Bounded KV Reuse for Efficient World Action Models](http://arxiv.org/abs/2610.11401v1)
+  > **TL;DR**: Reduces KV cache recomputation by selectively refreshing tokens via action expert's cross-attention and visual surprise, achieving 32-42% FLOPs reduction in video DiT with minimal accuracy drop.
+* `quantization` `compression` `efficient-inference` [Deflating the Hessian: Rank-4 W4A4 Quantization for Multimodal Diffusion Transformers](http://arxiv.org/abs/2610.11315v1)
+  > **TL;DR**: Low-rank W4A4 PTQ for diffusion transformers via coupled calibration and deflated Hessian, improving PSNR/LPIPS with rank-4 vs rank-32 (8× smaller) and boosting Qwen3-8B MMLU accuracy from 61.50% to 68.17%.
+* `token-pruning` `efficient-inference` `MLLM` [V-CoLA: Vision Token Compression with Linear Attention](http://arxiv.org/abs/2610.11251v1)
+  > **TL;DR**: Vision token compression for linear-attention VLMs via uniqueness-aware importance and adaptive merging, retaining 99.5% performance with 50% tokens and 1.86x-6.15x prefill speedup.
+* `quantization` `efficient-inference` `token-pruning` [Read What Matters: Query-Adaptive Quantization for KV Caches](http://arxiv.org/abs/2610.11245v1)
+  > **TL;DR**: Query-adaptive KV-cache quantization. ReadKV uses progressive coding (8-bit storage) with query-adaptive 4-bit fetch. 0.66% perplexity increase, 39% latency drop vs TurboQuant. Targets long-context decoding efficiency.
+* `quantization` `compression` `efficient-inference` [When Lower Reconstruction Loss Hurts: Distributionally Robust Refinement for Low-Bit LLM Quantization](http://arxiv.org/abs/2610.11226v1)
+  > **TL;DR**: Proposes DRQ for distributionally robust refinement of low-bit LLM quantization, improving performance without inference overhead. Works with existing PTQ methods (e.g., AWQ, GPTQ) for both dense and MoE models.
+* `quantization` `compression` `efficient-inference` [Bridging KV-Cache Quantization and Linear Attention: From Theory to Pretrained Weight Migration](http://arxiv.org/abs/2610.11214v1)
+  > **TL;DR**: Combines KV-cache quantization with linear attention in RAM-Net for efficient Transformer inference, using soft address assignments. Enables 87.1% accuracy recovery vs full model on 0.3B-7B LLMs with reduced overhead.
+* `quantization` `efficient-inference` `MLLM` [PageWeaver: KV-Guided Query Unions for Sparse Attention](http://arxiv.org/abs/2610.11201v1)
+  > **TL;DR**: Optimizes sparse attention via KV-guided query unions with FP8 KV, achieving 1.70x speedup and 3.26-7.66% lower latency, enhancing GPU efficiency without materializing reordered tensors.
+* `efficient-inference` `compression` [QUILT: Rethinking Sparse-Attention Prefill through Shared Query Execution](http://arxiv.org/abs/2610.11134v1)
+  > **TL;DR**: Sparse attention KV entry reuse for long-context models. QUILT jointly processes queries with shared KV entries using SCSD and cascaded sharing. Achieves 55.1% lower latency and 55.9% less KV data processed with GLM-5.3.
+* `compression` `efficient-inference` [Dynamics as Code: On Model Compression via Dynamic System](http://arxiv.org/abs/2610.11115v1)
+  > **TL;DR**: Proposes dynamic system-based model compression for high-dimensional weight representation, achieving competitive compression ratios on ResNet-18 and Qwen models with controllable decompression error.
+
 ### 2026-10-07
 * `compression` `efficient-inference` `token-pruning` [GRACE: Generation-aware latent compression for efficient video generation](http://arxiv.org/abs/2610.10524v1)
   > **TL;DR**: Efficient video generation via latent compression (8x token reduction) & DiT adaptation, achieving 11.1x latency reduction while matching pretrained quality.

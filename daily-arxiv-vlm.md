@@ -3,8 +3,8 @@
 
 # Daily Arxiv Papers on Efficient Vision & Multimodal Models
 
-![Static Badge](https://img.shields.io/badge/total_papers-508-blue?logo=gitbook)
-![Static Badge](https://img.shields.io/badge/update-2026.10.10-red?logo=fireship)
+![Static Badge](https://img.shields.io/badge/total_papers-530-blue?logo=gitbook)
+![Static Badge](https://img.shields.io/badge/update-2026.10.11-red?logo=fireship)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.CV-green)](https://arxiv.org/list/cs.CV/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.LG-green)](https://arxiv.org/list/cs.LG/recent)
 [![Static Badge](https://img.shields.io/badge/arXiv-cs.AI-green)](https://arxiv.org/list/cs.AI/recent)
@@ -22,6 +22,52 @@ Multimodal Large Language Models · Visual Perception · CLIP
 `MLLM`
 
 ---
+### 2026-10-09
+* `token-pruning` `efficient-inference` [LapMerge: Differentiable Exact-Budget Token Merging in Linear Time](http://arxiv.org/abs/2610.13858v1)
+  > **TL;DR**: Problem: High cost of long token sequences in vision/language models. Method: LapMerge, a differentiable token merger with exact output budget and linear-time prefix/suffix scans. Key metrics: Up to 100x faster than reducers, maintains accuracy, works on ordered spatial/temporal tokens.
+* `compression` `efficient-inference` [SplatQ: Interaction-Aware Pruning of 3D Gaussian Splatting via Quadratic Selection](http://arxiv.org/abs/2610.13503v1)
+  > **TL;DR**: Combines combinatorial pruning and quadratic optimization for balanced 3D Gaussian Splatting compression. Achieves better reconstruction quality and rendering speed via joint deletion effects modeling.
+* `token-pruning` `efficient-inference` `MLLM` [SheafPrune: Sheaf-Guided Graph Propagation for Visual Token Pruning](http://arxiv.org/abs/2610.13263v1)
+  > **TL;DR**: Proposes SheafPrune for visual token pruning in MLLMs, using sheaf-guided graph propagation to select top-k tokens. Retains 10% tokens for 5.15x prefill speedup and 84.0% FLOPs reduction.
+* `token-pruning` `efficient-inference` [MixTok: Adaptive Visual Tokenization with Global 1D Tokens and Sparse 2D Refinement](http://arxiv.org/abs/2610.13181v1)
+  > **TL;DR**: Proposes MixTok, adaptive visual tokenizer combining 1D global and sparse 2D refinement tokens for efficiency, achieving rFID 1.195 at ~128 tokens/image.
+* `token-pruning` `efficient-inference` `MLLM` [GeoGR: Spatial-Semantic Token Compression and Group Routing for Efficient 3D VLMs](http://arxiv.org/abs/2610.13035v1)
+  > **TL;DR**: Efficient 3D VLM inference via spatial-semantic token compression (GeoSemZip) and group routing (GroupRoute), achieving 6.8x prefill speedup while retaining 95.2% performance on LLaVA-OneVision-7B.
+* `token-pruning` `efficient-inference` `MLLM` [Video Codec-Guided Training-Free Token Compression for Video Large Language Models](http://arxiv.org/abs/2610.12959v1)
+  > **TL;DR**: Efficient visual token compression for VLLMs using video codec-guided prior to reduce feature comparisons in token protection and temporal merging, achieving comparable performance to FlashVID with lower complexity.
+* `compression` `efficient-inference` [APEX: Asynchronous Prefix Denoising for Extreme Compression](http://arxiv.org/abs/2610.12843v1)
+  > **TL;DR**: APEX addresses extreme latent token compression (64x-128x) in diffusion models via asynchronous prefix denoising, outperforming baselines in reconstruction and generation at low compute budgets.
+* `quantization` `efficient-inference` `MLLM` [ReplaySSM: Cache SSM Inputs, Not State](http://arxiv.org/abs/2610.13778v1)
+  > **TL;DR**: Reduces state I/O bottleneck in SSMs by decoupling output computation from checkpoint updates using mixed-precision checkpoints, achieving 1.2-1.47x decoding speedup and 1.8x speculative throughput.
+* `quantization` `efficient-inference` `MLLM` [DualQuant: Dual-scale Calibration-free Weight-and-Activation Quantization for LLMs](http://arxiv.org/abs/2610.13767v1)
+  > **TL;DR**: Proposes a calibration-free PTQ method (DUALQUANT) for LLMs, minimizing weight-reconstruction MSE for W4A4 quantization, achieving 2.61x memory reduction and 2.46x throughput speedup over BF16 on Llama-3.1-8B.
+* `efficient-inference` `compression` [Orthros: Phase-Aware Heterogeneous Attention for Efficient Transformers](http://arxiv.org/abs/2610.13735v1)
+  > **TL;DR**: Introduces Orthros attention for efficient Transformers, dynamically switching computation patterns for linear complexity prefilling and full attention decoding. Achieves 21.9x prefilling speedup with preserved long-context capabilities.
+* `efficient-inference` `compression` `quantization` [Not All Dimensions Are Equal: Outlier-Aware Attention Linearization with Grouped Quadratic Kernels](http://arxiv.org/abs/2610.13674v1)
+  > **TL;DR**: Addresses approximation error in linear attention via outlier-aware dimension grouping (OAL), reducing relative MSE by 8.9% on Qwen2.5-0.5B and improving perplexity from 31.71 to 27.50 on WikiText-103.
+* `token-pruning` `efficient-inference` `MLLM` [AudioTETRIS: Token Elimination via Transitional Importance Signals for Efficient Audio LLMs](http://arxiv.org/abs/2610.13600v1)
+  > **TL;DR**: Reduces token count in audio LLMs with a training-free method using acoustic prior and attention-based compression, achieving full-token accuracy with 25% tokens on speech tasks for Qwen2-Audio-7B.
+* `token-pruning` `compression` `efficient-inference` [GeoGR: Spatial-Semantic Token Compression and Group Routing for Efficient 3D VLMs](http://arxiv.org/abs/2610.13035v1)
+  > **TL;DR**: Efficient 3D VLM inference via spatial-semantic token compression (GeoSemZip) and group-wise layer skipping (GroupRoute), retaining 95-96% performance with 6.1-6.8x LLM prefill speedup.
+* `quantization` `efficient-inference` `compression` [ReplaySSM: Cache SSM Inputs, Not State](http://arxiv.org/abs/2610.13778v1)
+  > **TL;DR**: Reduces state memory traffic in SSMs by half via input caching and mixed-precision state updates, achieving 1.2--1.47x speedup and improved accuracy with low-precision checkpoints.
+* `quantization` `efficient-inference` [DualQuant: Dual-scale Calibration-free Weight-and-Activation Quantization for LLMs](http://arxiv.org/abs/2610.13767v1)
+  > **TL;DR**: Dual-scale calibration-free quantization for LLMs minimizing weight-reconstruction MSE to yield activation rescalings, achieving W4A4 quantization with 2.61x memory reduction and 2.46x speedup over BF16.
+* `compression` `efficient-inference` `MLLM` [SmolWAM: A Latent World-Action Model for Robotic Manipulation on Edge Devices](http://arxiv.org/abs/2610.13740v1)
+  > **TL;DR**: Compresses a 2B-parameter Cosmos Policy for edge devices via latent reconstruction, token reduction (1008 tokens), and block pruning (12/28), achieving 11x faster inference, 18.5x fewer FLOPs, and 3.2x less memory with 95.5% task success.
+* `efficient-inference` `compression` `token-pruning` [Not All Dimensions Are Equal: Outlier-Aware Attention Linearization with Grouped Quadratic Kernels](http://arxiv.org/abs/2610.13674v1)
+  > **TL;DR**: Addresses attention linearization error via outlier-aware grouped quadratic kernels, improving efficiency in Transformer inference. OAL reduces frozen-attention MSE by 8.9% on Qwen2.5-0.5B and lowers WikiText-103 perplexity to 27.50.
+* `quantization` `efficient-inference` `compression` [DuoRate: Two-Rate Per-Expert Precision Allocation for Mixture-of-Experts Serving](http://arxiv.org/abs/2610.13328v1)
+  > **TL;DR**: Efficient per-expert precision for MoE models via two-rate allocation (2.3-2.9 bpw), reducing decode traffic while maintaining accuracy (6.3-47.0 points over baselines).
+* `quantization` `efficient-inference` [Structure-Aware Numerical Stabilization for Half-Precision Proximal Policy Optimization](http://arxiv.org/abs/2610.13306v1)
+  > **TL;DR**: Addresses numerical instability in FP16 PPO training, proposes structure-aware stabilization modules, achieving up to 2.03x speedup, 74.9% optimizer-state memory reduction, and 44.5% peak GPU memory reduction.
+* `compression` `efficient-inference` `quantization` [Tabular Foundation Models Are Effectively Shallow](http://arxiv.org/abs/2610.13253v1)
+  > **TL;DR**: Reduces overparameterization in tabular foundation models by replacing up to 96% transformer blocks with a closed-form affine translator, saving 1.5B parameters, speeding up GPU inference 6× at median 0.03 AUROC cost, and enabling 2.4× faster cached queries with 6× less memory.
+* `compression` `efficient-inference` [How Much Computation Does Every Forecast Need? Structured Block Skipping in Two Time-Series Foundation Models](http://arxiv.org/abs/2610.13208v1)
+  > **TL;DR**: Structured block skipping in time-series foundation models (Chronos-Bolt and TimesFM) reduces median A100 batch-1 latency by 11.2-13.4% with negligible quality drop, enabling efficient inference via input-dependent block bypass.
+* `compression` `efficient-inference` `token-pruning` [APEX: Asynchronous Prefix Denoising for Extreme Compression](http://arxiv.org/abs/2610.12843v1)
+  > **TL;DR**: Extreme compression (64x/128x) in diffusion models via hierarchical latent space and asynchronous channel group denoising, outperforming baselines on ImageNet-512 with matched compute.
+
 ### 2026-10-08
 * `token-pruning` `efficient-inference` `compression` [BudgetPix: Compute-Adaptive Tokenization for Pixel-Space Image Diffusion](http://arxiv.org/abs/2610.12307v1)
   > **TL;DR**: Adaptive tokenization for pixel-space diffusion, dynamically allocates compute based on visual complexity, enabling 25-40% compute reduction with minimal quality degradation (0.8 FID increase at 60% compute).
